@@ -11,7 +11,9 @@ import UIKit
 class GuessingGameViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var guessField: UITextField!
-    let randomNumber: Int = Int.random(in: 0 ..< 10)
+    @IBOutlet weak var attemptsCountLabel: UILabel!
+    let randomNumber: Int = Int.random(in: 1 ..< 10)
+    var attempts: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,8 @@ class GuessingGameViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        increeseAttempts()
+        
         guessField.resignFirstResponder()
         
         guard let number: Int = Int(guessField.text ?? "") else {
@@ -54,5 +58,10 @@ class GuessingGameViewController: UIViewController, UITextFieldDelegate {
         alert.addAction(UIAlertAction(title: "Ok", style: .cancel))
         
         present(alert, animated: true)
+    }
+    
+    private func increeseAttempts() {
+        attempts += 1
+        attemptsCountLabel.text = "\(attempts)"
     }
 }
