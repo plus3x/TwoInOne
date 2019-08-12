@@ -19,6 +19,7 @@ class GuessingGameViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         guessField.delegate = self
+        guessField.becomeFirstResponder()
     }
     
     @IBAction func onOkTap(_ sender: Any) {
@@ -27,8 +28,6 @@ class GuessingGameViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         increeseAttempts()
-        
-        guessField.resignFirstResponder()
         
         guard let number: Int = Int(guessField.text ?? "") else {
             showAlert("Wrong value")
@@ -41,6 +40,7 @@ class GuessingGameViewController: UIViewController, UITextFieldDelegate {
         case _ where number > randomNumber:
             showAlert("Greater!")
         case randomNumber:
+            guessField.resignFirstResponder()
             showAlert("Exactly!!!")
         default:
             showAlert("Wrong value")
