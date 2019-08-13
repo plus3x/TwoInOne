@@ -12,4 +12,9 @@ class MainViewController: UIViewController {
     @IBAction func onGuessingGameButtonTap(_ sender: Any) {
         self.performSegue(withIdentifier: "ShowGuessingGameVC", sender: self)
     }
+    
+    @IBAction func onGuessingGameTwoButtonTap(_ sender: Any) {
+        let vc = GuessingGameTwoViewController()
+        present(vc, animated: true, completion: nil)
+    }
 }
