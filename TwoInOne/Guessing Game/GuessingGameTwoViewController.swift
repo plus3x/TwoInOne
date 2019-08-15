@@ -72,6 +72,8 @@ class GuessingGameTwoViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func onExactlyButtonTap(_ sender: Any) {
         showAlert("I've calculate guess in \(attempts) steps")
+        let record = Record(number: number, attempts: attempts)
+        RecordSaver.save(record, toGame: .guessingGameTwo)
     }
     
     @IBAction func onGreaterButtonTap(_ sender: Any) {
@@ -98,7 +100,7 @@ class GuessingGameTwoViewController: UIViewController, UITextFieldDelegate {
             message: msg,
             preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "Ok", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
         
         present(alert, animated: true)
     }

@@ -15,6 +15,12 @@ class MainViewController: UIViewController {
     
     @IBAction func onGuessingGameTwoButtonTap(_ sender: Any) {
         let vc = GuessingGameTwoViewController()
-        present(vc, animated: true, completion: nil)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func onRecordsButtonTap(_ sender: Any) {
+//        let vc = RecordsViewController()
+//        navigationController?.pushViewController(vc, animated: true)
+        self.performSegue(withIdentifier: "ShowRecordsVC", sender: self)
     }
 }

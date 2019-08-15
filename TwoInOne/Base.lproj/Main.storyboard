@@ -34,10 +34,13 @@
                                     <action selector="onGuessingGameButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EUI-9s-HoJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFw-v0-3gu">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFw-v0-3gu">
                                 <rect key="frame" x="179" y="433" width="57" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Records"/>
+                                <connections>
+                                    <action selector="onRecordsButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1cK-jq-Bgf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -46,11 +49,12 @@
                     <navigationItem key="navigationItem" id="Ss7-XE-TBM"/>
                     <connections>
                         <segue destination="Y4L-ve-chY" kind="show" identifier="ShowGuessingGameVC" id="N8M-7Q-Oje"/>
+                        <segue destination="RWn-Yd-uDL" kind="show" identifier="ShowRecordsVC" id="rXD-0W-rrU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="175" y="113"/>
+            <point key="canvasLocation" x="201" y="103"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mXp-OF-Qv2">
@@ -131,7 +135,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F0e-MD-5aS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="937.68115942028987" y="112.5"/>
+            <point key="canvasLocation" x="1097" y="-42"/>
+        </scene>
+        <!--Records-->
+        <scene sceneID="OLm-ip-XPy">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="RecordsStoryboard" storyboardName="Records" id="RWn-Yd-uDL" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0oj-dE-7rg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1067" y="394"/>
         </scene>
     </scenes>
 </document>

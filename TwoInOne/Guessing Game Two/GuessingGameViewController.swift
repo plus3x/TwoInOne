@@ -42,6 +42,8 @@ class GuessingGameViewController: UIViewController, UITextFieldDelegate {
         case randomNumber:
             guessField.resignFirstResponder()
             showAlert("Exactly!!!")
+            let record = Record(number: randomNumber, attempts: attempts)
+            RecordSaver.save(record, toGame: .guessingGame)
         default:
             showAlert("Wrong value")
         }
@@ -55,7 +57,7 @@ class GuessingGameViewController: UIViewController, UITextFieldDelegate {
             message: msg,
             preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "Ok", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
         
         present(alert, animated: true)
     }
