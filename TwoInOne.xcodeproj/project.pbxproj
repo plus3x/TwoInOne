@@ -22,6 +22,11 @@
 		B6E489BD2301668600A0BC6F /* GuessingGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E489BC2301668600A0BC6F /* GuessingGameViewController.swift */; };
 		B6E489C02301972D00A0BC6F /* GuessingGameTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E489BE2301972D00A0BC6F /* GuessingGameTwoViewController.swift */; };
 		B6E489C12301972D00A0BC6F /* GuessingGameTwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6E489BF2301972D00A0BC6F /* GuessingGameTwoViewController.xib */; };
+		B6FD868F230580FF00C070E5 /* MasterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FD868E230580FF00C070E5 /* MasterController.swift */; };
+		B6FD869123093F6E00C070E5 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FD869023093F6E00C070E5 /* MenuTableViewCell.swift */; };
+		B6FD8694230A9DB100C070E5 /* PairsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FD8693230A9DB100C070E5 /* PairsViewController.swift */; };
+		B6FD8696230A9DC700C070E5 /* Pairs Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6FD8695230A9DC700C070E5 /* Pairs Game.storyboard */; };
+		B6FD8699230AA7AC00C070E5 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FD8698230AA7AC00C070E5 /* MenuItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +68,11 @@
 		B6E489BC2301668600A0BC6F /* GuessingGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessingGameViewController.swift; sourceTree = "<group>"; };
 		B6E489BE2301972D00A0BC6F /* GuessingGameTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessingGameTwoViewController.swift; sourceTree = "<group>"; };
 		B6E489BF2301972D00A0BC6F /* GuessingGameTwoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuessingGameTwoViewController.xib; sourceTree = "<group>"; };
+		B6FD868E230580FF00C070E5 /* MasterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterController.swift; sourceTree = "<group>"; };
+		B6FD869023093F6E00C070E5 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		B6FD8693230A9DB100C070E5 /* PairsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsViewController.swift; sourceTree = "<group>"; };
+		B6FD8695230A9DC700C070E5 /* Pairs Game.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Pairs Game.storyboard"; sourceTree = "<group>"; };
+		B6FD8698230AA7AC00C070E5 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,12 +152,15 @@
 		B6E4898D2301623900A0BC6F /* TwoInOne */ = {
 			isa = PBXGroup;
 			children = (
+				B6FD8697230AA78E00C070E5 /* Menu */,
+				B6FD8692230A9D6600C070E5 /* Pairs Game */,
 				B69FC9162303F32500531350 /* Records */,
 				B6E4898E2301623900A0BC6F /* AppDelegate.swift */,
 				B6E489902301623900A0BC6F /* MainViewController.swift */,
 				B69FC9152303F30A00531350 /* Guessing Game Two */,
 				B69FC9132303F2E700531350 /* Guessing Game */,
 				B6E489922301623900A0BC6F /* Main.storyboard */,
+				B6FD868E230580FF00C070E5 /* MasterController.swift */,
 				B6E489952301623A00A0BC6F /* Assets.xcassets */,
 				B6E489972301623A00A0BC6F /* LaunchScreen.storyboard */,
 				B6E4899A2301623A00A0BC6F /* Info.plist */,
@@ -171,6 +184,24 @@
 				B6E489B02301623A00A0BC6F /* Info.plist */,
 			);
 			path = TwoInOneUITests;
+			sourceTree = "<group>";
+		};
+		B6FD8692230A9D6600C070E5 /* Pairs Game */ = {
+			isa = PBXGroup;
+			children = (
+				B6FD8693230A9DB100C070E5 /* PairsViewController.swift */,
+				B6FD8695230A9DC700C070E5 /* Pairs Game.storyboard */,
+			);
+			path = "Pairs Game";
+			sourceTree = "<group>";
+		};
+		B6FD8697230AA78E00C070E5 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				B6FD869023093F6E00C070E5 /* MenuTableViewCell.swift */,
+				B6FD8698230AA7AC00C070E5 /* MenuItem.swift */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +310,7 @@
 			files = (
 				B69FC91A2303F36B00531350 /* Records.storyboard in Resources */,
 				B6E489992301623A00A0BC6F /* LaunchScreen.storyboard in Resources */,
+				B6FD8696230A9DC700C070E5 /* Pairs Game.storyboard in Resources */,
 				B6E489962301623A00A0BC6F /* Assets.xcassets in Resources */,
 				B6E489C12301972D00A0BC6F /* GuessingGameTwoViewController.xib in Resources */,
 				B6E489942301623900A0BC6F /* Main.storyboard in Resources */,
@@ -310,8 +342,12 @@
 				B6E4898F2301623900A0BC6F /* AppDelegate.swift in Sources */,
 				B69FC91C23040ABE00531350 /* RecordTableViewCell.swift in Sources */,
 				B6E489C02301972D00A0BC6F /* GuessingGameTwoViewController.swift in Sources */,
+				B6FD868F230580FF00C070E5 /* MasterController.swift in Sources */,
 				B69FC9222304300D00531350 /* RecordSaver.swift in Sources */,
+				B6FD869123093F6E00C070E5 /* MenuTableViewCell.swift in Sources */,
+				B6FD8694230A9DB100C070E5 /* PairsViewController.swift in Sources */,
 				B69FC920230427C600531350 /* Record.swift in Sources */,
+				B6FD8699230AA7AC00C070E5 /* MenuItem.swift in Sources */,
 				B6E489BD2301668600A0BC6F /* GuessingGameViewController.swift in Sources */,
 				B69FC9182303F34900531350 /* RecordsViewController.swift in Sources */,
 			);

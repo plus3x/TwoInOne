@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6he-0G-Gcm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q9N-CG-ji2">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,67 +10,107 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--View Controller-->
+        <scene sceneID="q7c-Fp-MlI">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="TwoInOne" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="yWi-Xe-RIv" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sue-L0-0eK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7c-gR-q6N">
-                                <rect key="frame" x="148" y="363" width="120" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Guessing Game II"/>
-                                <connections>
-                                    <action selector="onGuessingGameTwoButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oov-n8-rOy"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="git-Gp-i5f">
-                                <rect key="frame" x="154" y="307" width="106" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Guessing game"/>
-                                <connections>
-                                    <action selector="onGuessingGameButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EUI-9s-HoJ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFw-v0-3gu">
-                                <rect key="frame" x="179" y="433" width="57" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Records"/>
-                                <connections>
-                                    <action selector="onRecordsButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1cK-jq-Bgf"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRf-6C-Nvy" userLabel="Welcome Label">
+                                <rect key="frame" x="143" y="461.5" width="128.5" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KRf-6C-Nvy" firstAttribute="centerY" secondItem="QCI-dV-3nd" secondAttribute="centerY" id="LuM-sB-xMh"/>
+                            <constraint firstItem="KRf-6C-Nvy" firstAttribute="centerX" secondItem="QCI-dV-3nd" secondAttribute="centerX" id="SJ0-ic-3yG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QCI-dV-3nd"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Ss7-XE-TBM"/>
-                    <connections>
-                        <segue destination="Y4L-ve-chY" kind="show" identifier="ShowGuessingGameVC" id="N8M-7Q-Oje"/>
-                        <segue destination="RWn-Yd-uDL" kind="show" identifier="ShowRecordsVC" id="rXD-0W-rrU"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o0m-yD-b7i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="201" y="103"/>
+            <point key="canvasLocation" x="-1484.057971014493" y="115.84821428571428"/>
+        </scene>
+        <!--Master-->
+        <scene sceneID="ZLK-LC-ECb">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3P0-pb-U5t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="1dJ-lA-E3Y" userLabel="Master" customClass="MasterViewController" customModule="TwoInOne" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="F9X-Yb-jVP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="MenuTableViewCellIdentifier" textLabel="ESM-av-6p1" style="IBUITableViewCellStyleDefault" id="79h-Hi-bHp" customClass="MenuTableViewCell" customModule="TwoInOne" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="79h-Hi-bHp" id="Te6-2a-Ohm">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ESM-av-6p1">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="menuItemLabel" destination="ESM-av-6p1" id="oCL-5U-k9w"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1dJ-lA-E3Y" id="MgW-GA-w3F"/>
+                            <outlet property="delegate" destination="1dJ-lA-E3Y" id="vkx-WG-x86"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Menu" id="dS3-Qy-e2F" userLabel="Menu"/>
+                    <connections>
+                        <segue destination="Y4L-ve-chY" kind="show" identifier="ShowGuessingGame" id="6J1-nu-Izm"/>
+                        <segue destination="RWn-Yd-uDL" kind="show" identifier="ShowRecords" id="WC6-k7-Vpv"/>
+                        <segue destination="rUR-yC-GHp" kind="show" identifier="ShowPairsGame" id="FLV-v7-vnK"/>
+                    </connections>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="-561" y="-533"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="mXp-OF-Qv2">
+        <scene sceneID="vKO-xW-In0">
             <objects>
-                <navigationController id="6he-0G-Gcm" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Eav-XR-qa9">
+                <navigationController id="0Yh-qq-uyt" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ny7-OS-q93">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="z5g-vj-gdf"/>
+                        <segue destination="1dJ-lA-E3Y" kind="relationship" relationship="rootViewController" id="nZv-b6-OWs"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vxK-gD-9Gp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OFq-Cg-g5r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-558" y="113"/>
+            <point key="canvasLocation" x="-1484" y="-533"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="LOU-3u-fOG">
+            <objects>
+                <splitViewController id="Q9N-CG-ji2" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="0Yh-qq-uyt" kind="relationship" relationship="masterViewController" id="uJl-4F-KhR"/>
+                        <segue destination="yWi-Xe-RIv" kind="relationship" relationship="detailViewController" id="R8M-Iu-1lx"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zdk-jc-zz2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2398" y="-209"/>
         </scene>
         <!--Guessing Game View Controller-->
         <scene sceneID="zlR-0g-YwC">
@@ -135,7 +175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F0e-MD-5aS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1097" y="-42"/>
+            <point key="canvasLocation" x="365" y="-822"/>
         </scene>
         <!--Records-->
         <scene sceneID="OLm-ip-XPy">
@@ -143,7 +183,15 @@
                 <viewControllerPlaceholder storyboardIdentifier="RecordsStoryboard" storyboardName="Records" id="RWn-Yd-uDL" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0oj-dE-7rg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1067" y="394"/>
+            <point key="canvasLocation" x="364" y="-406"/>
+        </scene>
+        <!--Pairs Game-->
+        <scene sceneID="2SV-eI-bJv">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Pairs Game" id="rUR-yC-GHp" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vkl-vK-CBL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="364" y="-310"/>
         </scene>
     </scenes>
 </document>

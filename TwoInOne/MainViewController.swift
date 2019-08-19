@@ -13,6 +13,11 @@ class MainViewController: UIViewController {
         self.performSegue(withIdentifier: "ShowGuessingGameVC", sender: self)
     }
     
+    @IBAction func onMenuButtonTap(_ sender: Any) {
+        let vc = MasterViewController()
+        present(vc, animated: true, completion: nil)
+    }
+    
     @IBAction func onGuessingGameTwoButtonTap(_ sender: Any) {
         let vc = GuessingGameTwoViewController()
         navigationController?.pushViewController(vc, animated: true)
