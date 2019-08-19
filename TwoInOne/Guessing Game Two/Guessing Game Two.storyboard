@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7gF-LH-S1v">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Guessing Game Two View Controller-->
+        <scene sceneID="qIy-lS-boi">
+            <objects>
+                <viewController id="7gF-LH-S1v" customClass="GuessingGameTwoViewController" customModule="TwoInOne" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GRK-vD-4tF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guessing Game II" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQb-7p-4Ip" userLabel="Header Label">
+                                <rect key="frame" x="0.0" y="52" width="414" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="6YS-a3-sCz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6v-8F-qU9" userLabel="Text Label">
+                                <rect key="frame" x="16" y="95" width="382" height="142.5"/>
+                                <string key="text">  You need to made up some number between 1 and 1 000 000 and I try to find that you made up.  Instruction:   1) You need to made up number;   2) Say me in what I wrong: "Less", "Greater" or "Exactly!"</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WSg-1k-Y0J" userLabel="Attempts Backgroud View 1">
+                                <rect key="frame" x="16" y="245.5" width="382" height="35"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fyR-na-8C6" userLabel="Attempts Background View 2">
+                                        <rect key="frame" x="119" y="0.0" width="144" height="35"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attempts:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNW-Jh-7FR">
+                                                <rect key="frame" x="0.0" y="0.0" width="110" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="Y2z-Z2-4a9"/>
+                                                    <constraint firstAttribute="width" constant="110" id="fN4-Lb-oA1"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enK-gy-ib4">
+                                                <rect key="frame" x="110" y="7.5" width="34" height="20.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="34" id="0z2-Yt-Lg8"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="enK-gy-ib4" firstAttribute="leading" secondItem="kNW-Jh-7FR" secondAttribute="trailing" id="KKp-0w-BIb"/>
+                                            <constraint firstItem="kNW-Jh-7FR" firstAttribute="bottom" secondItem="fyR-na-8C6" secondAttribute="bottom" id="O5w-9J-NiA"/>
+                                            <constraint firstItem="enK-gy-ib4" firstAttribute="centerY" secondItem="kNW-Jh-7FR" secondAttribute="centerY" id="bYt-qP-Ph8"/>
+                                            <constraint firstItem="kNW-Jh-7FR" firstAttribute="leading" secondItem="fyR-na-8C6" secondAttribute="leading" id="eEB-Rb-J0a"/>
+                                            <constraint firstItem="kNW-Jh-7FR" firstAttribute="top" secondItem="fyR-na-8C6" secondAttribute="top" id="oFr-iB-ymV"/>
+                                            <constraint firstAttribute="height" constant="35" id="wG9-OA-wR4"/>
+                                            <constraint firstItem="enK-gy-ib4" firstAttribute="trailing" secondItem="fyR-na-8C6" secondAttribute="trailing" id="yk8-KM-b4u"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="fyR-na-8C6" firstAttribute="top" secondItem="WSg-1k-Y0J" secondAttribute="top" id="PBh-iM-pwu"/>
+                                    <constraint firstItem="fyR-na-8C6" firstAttribute="centerX" secondItem="WSg-1k-Y0J" secondAttribute="centerX" id="iBe-lf-0Ga"/>
+                                    <constraint firstAttribute="height" constant="35" id="nSg-2O-LId"/>
+                                    <constraint firstAttribute="bottom" secondItem="fyR-na-8C6" secondAttribute="bottom" id="yRE-zu-jUQ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y0t-3m-OXm" userLabel="Number Field Backgroud View 1">
+                                <rect key="frame" x="16" y="296.5" width="382" height="35"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ls0-RD-vNe" userLabel="Number Field Background View 2">
+                                        <rect key="frame" x="121" y="0.0" width="140" height="35"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sEE-5A-JqH">
+                                                <rect key="frame" x="0.0" y="0.0" width="110" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="110" id="qOF-jy-oTW"/>
+                                                    <constraint firstAttribute="height" constant="35" id="r5b-Aw-bpR"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ij4-qD-f7F">
+                                                <rect key="frame" x="110" y="0.0" width="30" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="EnH-ch-SVj"/>
+                                                </constraints>
+                                                <state key="normal" title="OK"/>
+                                                <connections>
+                                                    <action selector="onOkButtonTap:" destination="7gF-LH-S1v" eventType="touchUpInside" id="OE0-Qk-B6u"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="140" id="3je-Uw-M3p"/>
+                                            <constraint firstItem="Ij4-qD-f7F" firstAttribute="trailing" secondItem="ls0-RD-vNe" secondAttribute="trailing" id="DVL-GC-wdw"/>
+                                            <constraint firstItem="Ij4-qD-f7F" firstAttribute="centerY" secondItem="sEE-5A-JqH" secondAttribute="centerY" id="KZf-7b-mtf"/>
+                                            <constraint firstItem="sEE-5A-JqH" firstAttribute="bottom" secondItem="ls0-RD-vNe" secondAttribute="bottom" id="LK9-sv-DbT" userLabel="Number Field.bottom = bottom "/>
+                                            <constraint firstItem="Ij4-qD-f7F" firstAttribute="leading" secondItem="sEE-5A-JqH" secondAttribute="trailing" id="MnC-S1-q6e"/>
+                                            <constraint firstItem="sEE-5A-JqH" firstAttribute="leading" secondItem="ls0-RD-vNe" secondAttribute="leading" id="N21-3q-yel"/>
+                                            <constraint firstAttribute="height" constant="35" id="R0G-1r-bSN"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="SDG-xN-DV8"/>
+                                    <constraint firstItem="ls0-RD-vNe" firstAttribute="centerX" secondItem="y0t-3m-OXm" secondAttribute="centerX" id="cYo-4U-3uY"/>
+                                    <constraint firstItem="ls0-RD-vNe" firstAttribute="centerY" secondItem="y0t-3m-OXm" secondAttribute="centerY" id="zwD-YT-tWb"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4n-S6-Fzh">
+                                <rect key="frame" x="0.0" y="347.5" width="414" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="c3P-On-2hO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="x4H-Un-jTi" userLabel="Correct Buttons Background Stack View">
+                                <rect key="frame" x="16" y="403.5" width="382" height="35"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXW-8T-fig">
+                                        <rect key="frame" x="0.0" y="0.0" width="122" height="35"/>
+                                        <state key="normal" title="Less"/>
+                                        <connections>
+                                            <action selector="onLessButtonTap:" destination="7gF-LH-S1v" eventType="touchUpInside" id="ha9-HD-J9D"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A5n-tS-kT5">
+                                        <rect key="frame" x="130" y="0.0" width="122" height="35"/>
+                                        <state key="normal" title="Exactly"/>
+                                        <connections>
+                                            <action selector="onExactlyButtonTap:" destination="7gF-LH-S1v" eventType="touchUpInside" id="2xA-Xd-IPs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uW4-mc-Gvi">
+                                        <rect key="frame" x="260" y="0.0" width="122" height="35"/>
+                                        <state key="normal" title="Greater"/>
+                                        <connections>
+                                            <action selector="onGreaterButtonTap:" destination="7gF-LH-S1v" eventType="touchUpInside" id="KyO-Rm-2ad"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="RVB-Kg-b6F"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="x4H-Un-jTi" firstAttribute="top" secondItem="e4n-S6-Fzh" secondAttribute="bottom" constant="16" id="5y2-yq-zrP" userLabel="Correct Buttons Background Stack View.top = Guess Label.bottom + 16"/>
+                            <constraint firstItem="y0t-3m-OXm" firstAttribute="trailing" secondItem="SQx-U0-x09" secondAttribute="trailing" constant="-16" id="Cqu-5Y-3HX" userLabel="Number Field Backgroud View 1.trailing = Safe Area.trailing"/>
+                            <constraint firstItem="x4H-Un-jTi" firstAttribute="trailing" secondItem="SQx-U0-x09" secondAttribute="trailing" constant="-16" id="EYL-K1-1Gz"/>
+                            <constraint firstItem="u6v-8F-qU9" firstAttribute="trailing" secondItem="SQx-U0-x09" secondAttribute="trailing" constant="-16" id="IVP-mX-HKu"/>
+                            <constraint firstItem="SQx-U0-x09" firstAttribute="trailing" secondItem="e4n-S6-Fzh" secondAttribute="trailing" id="Jts-JO-alA"/>
+                            <constraint firstItem="y0t-3m-OXm" firstAttribute="leading" secondItem="SQx-U0-x09" secondAttribute="leading" constant="16" id="KgN-c7-K9u" userLabel="Number Field Backgroud View 1.leading = Safe Area.leading"/>
+                            <constraint firstItem="e4n-S6-Fzh" firstAttribute="top" secondItem="y0t-3m-OXm" secondAttribute="bottom" constant="16" id="RzK-FZ-Y3a"/>
+                            <constraint firstItem="SQx-U0-x09" firstAttribute="trailing" secondItem="y0t-3m-OXm" secondAttribute="trailing" constant="16" id="XwM-kI-EFC"/>
+                            <constraint firstItem="WSg-1k-Y0J" firstAttribute="leading" secondItem="SQx-U0-x09" secondAttribute="leading" constant="16" id="cag-xF-pgE"/>
+                            <constraint firstItem="WSg-1k-Y0J" firstAttribute="trailing" secondItem="SQx-U0-x09" secondAttribute="trailing" constant="-16" id="cpT-XJ-cer"/>
+                            <constraint firstItem="x4H-Un-jTi" firstAttribute="leading" secondItem="SQx-U0-x09" secondAttribute="leading" constant="16" id="dOu-38-en2"/>
+                            <constraint firstItem="e4n-S6-Fzh" firstAttribute="leading" secondItem="SQx-U0-x09" secondAttribute="leading" id="kip-9e-r6g"/>
+                            <constraint firstItem="WSg-1k-Y0J" firstAttribute="top" secondItem="u6v-8F-qU9" secondAttribute="bottom" constant="8" id="krJ-KZ-ZDp"/>
+                            <constraint firstItem="kQb-7p-4Ip" firstAttribute="top" secondItem="SQx-U0-x09" secondAttribute="top" constant="8" id="mkv-xR-ZOh"/>
+                            <constraint firstItem="y0t-3m-OXm" firstAttribute="top" secondItem="WSg-1k-Y0J" secondAttribute="bottom" constant="16" id="nBP-AO-MaJ" userLabel="Number Field Backgroud View 1.top = Attempts Backgroud View 1.bottom"/>
+                            <constraint firstItem="u6v-8F-qU9" firstAttribute="top" secondItem="kQb-7p-4Ip" secondAttribute="bottom" constant="8" id="qh0-Ni-Ii8"/>
+                            <constraint firstItem="kQb-7p-4Ip" firstAttribute="trailing" secondItem="SQx-U0-x09" secondAttribute="trailing" id="reE-Xd-y75"/>
+                            <constraint firstItem="u6v-8F-qU9" firstAttribute="leading" secondItem="SQx-U0-x09" secondAttribute="leading" constant="16" id="xn8-VV-CH8"/>
+                            <constraint firstItem="kQb-7p-4Ip" firstAttribute="leading" secondItem="SQx-U0-x09" secondAttribute="leading" id="zMk-bf-Znk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SQx-U0-x09"/>
+                    </view>
+                    <connections>
+                        <outlet property="attemptsCountLabel" destination="enK-gy-ib4" id="1st-QI-yC1"/>
+                        <outlet property="attemptsLabel" destination="kNW-Jh-7FR" id="dhR-nY-mMF"/>
+                        <outlet property="exactlyButton" destination="A5n-tS-kT5" id="Tk5-nP-SZq"/>
+                        <outlet property="greaterButton" destination="uW4-mc-Gvi" id="rWi-Kj-uO5"/>
+                        <outlet property="guessLabel" destination="e4n-S6-Fzh" id="T4S-xM-4uL"/>
+                        <outlet property="lessButton" destination="qXW-8T-fig" id="67s-z1-G4m"/>
+                        <outlet property="numberField" destination="sEE-5A-JqH" id="AMf-f2-aOt"/>
+                        <outlet property="okButton" destination="Ij4-qD-f7F" id="bFE-o3-82h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ucr-ua-4Tk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-128.98550724637681" y="-153.34821428571428"/>
+        </scene>
+    </scenes>
+</document>

@@ -10,6 +10,8 @@ import UIKit
 
 class MenuTableViewCell: UITableViewCell {
     
+    static let identifier = "MenuTableViewCellIdentifier"
+    
     @IBOutlet weak var menuItemLabel: UILabel!
-
+    
 }

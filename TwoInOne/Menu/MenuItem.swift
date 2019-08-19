@@ -10,6 +10,5 @@ import UIKit
 
 struct MenuItem {
     let name: String
-    let segue: String?
-    let view: UIViewController.Type?
+    let segue: String
 }

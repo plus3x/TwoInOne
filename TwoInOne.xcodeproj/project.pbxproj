@@ -21,12 +21,13 @@
 		B6E489AF2301623A00A0BC6F /* TwoInOneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E489AE2301623A00A0BC6F /* TwoInOneUITests.swift */; };
 		B6E489BD2301668600A0BC6F /* GuessingGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E489BC2301668600A0BC6F /* GuessingGameViewController.swift */; };
 		B6E489C02301972D00A0BC6F /* GuessingGameTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E489BE2301972D00A0BC6F /* GuessingGameTwoViewController.swift */; };
-		B6E489C12301972D00A0BC6F /* GuessingGameTwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6E489BF2301972D00A0BC6F /* GuessingGameTwoViewController.xib */; };
 		B6FD868F230580FF00C070E5 /* MasterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FD868E230580FF00C070E5 /* MasterController.swift */; };
 		B6FD869123093F6E00C070E5 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FD869023093F6E00C070E5 /* MenuTableViewCell.swift */; };
 		B6FD8694230A9DB100C070E5 /* PairsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FD8693230A9DB100C070E5 /* PairsViewController.swift */; };
 		B6FD8696230A9DC700C070E5 /* Pairs Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6FD8695230A9DC700C070E5 /* Pairs Game.storyboard */; };
 		B6FD8699230AA7AC00C070E5 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FD8698230AA7AC00C070E5 /* MenuItem.swift */; };
+		B6FD869B230AB5BC00C070E5 /* Guessing Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6FD869A230AB5BC00C070E5 /* Guessing Game.storyboard */; };
+		B6FD869D230AB79C00C070E5 /* Guessing Game Two.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6FD869C230AB79C00C070E5 /* Guessing Game Two.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,12 +68,13 @@
 		B6E489B02301623A00A0BC6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6E489BC2301668600A0BC6F /* GuessingGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessingGameViewController.swift; sourceTree = "<group>"; };
 		B6E489BE2301972D00A0BC6F /* GuessingGameTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessingGameTwoViewController.swift; sourceTree = "<group>"; };
-		B6E489BF2301972D00A0BC6F /* GuessingGameTwoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuessingGameTwoViewController.xib; sourceTree = "<group>"; };
 		B6FD868E230580FF00C070E5 /* MasterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterController.swift; sourceTree = "<group>"; };
 		B6FD869023093F6E00C070E5 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		B6FD8693230A9DB100C070E5 /* PairsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsViewController.swift; sourceTree = "<group>"; };
 		B6FD8695230A9DC700C070E5 /* Pairs Game.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Pairs Game.storyboard"; sourceTree = "<group>"; };
 		B6FD8698230AA7AC00C070E5 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		B6FD869A230AB5BC00C070E5 /* Guessing Game.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Guessing Game.storyboard"; sourceTree = "<group>"; };
+		B6FD869C230AB79C00C070E5 /* Guessing Game Two.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Guessing Game Two.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,21 +102,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B69FC9132303F2E700531350 /* Guessing Game */ = {
+		B69FC9132303F2E700531350 /* Guessing Game Two */ = {
 			isa = PBXGroup;
 			children = (
 				B6E489BE2301972D00A0BC6F /* GuessingGameTwoViewController.swift */,
-				B6E489BF2301972D00A0BC6F /* GuessingGameTwoViewController.xib */,
+				B6FD869C230AB79C00C070E5 /* Guessing Game Two.storyboard */,
 			);
-			path = "Guessing Game";
+			path = "Guessing Game Two";
 			sourceTree = "<group>";
 		};
-		B69FC9152303F30A00531350 /* Guessing Game Two */ = {
+		B69FC9152303F30A00531350 /* Guessing Game */ = {
 			isa = PBXGroup;
 			children = (
 				B6E489BC2301668600A0BC6F /* GuessingGameViewController.swift */,
+				B6FD869A230AB5BC00C070E5 /* Guessing Game.storyboard */,
 			);
-			path = "Guessing Game Two";
+			path = "Guessing Game";
 			sourceTree = "<group>";
 		};
 		B69FC9162303F32500531350 /* Records */ = {
@@ -157,8 +160,8 @@
 				B69FC9162303F32500531350 /* Records */,
 				B6E4898E2301623900A0BC6F /* AppDelegate.swift */,
 				B6E489902301623900A0BC6F /* MainViewController.swift */,
-				B69FC9152303F30A00531350 /* Guessing Game Two */,
-				B69FC9132303F2E700531350 /* Guessing Game */,
+				B69FC9152303F30A00531350 /* Guessing Game */,
+				B69FC9132303F2E700531350 /* Guessing Game Two */,
 				B6E489922301623900A0BC6F /* Main.storyboard */,
 				B6FD868E230580FF00C070E5 /* MasterController.swift */,
 				B6E489952301623A00A0BC6F /* Assets.xcassets */,
@@ -311,8 +314,9 @@
 				B69FC91A2303F36B00531350 /* Records.storyboard in Resources */,
 				B6E489992301623A00A0BC6F /* LaunchScreen.storyboard in Resources */,
 				B6FD8696230A9DC700C070E5 /* Pairs Game.storyboard in Resources */,
+				B6FD869B230AB5BC00C070E5 /* Guessing Game.storyboard in Resources */,
+				B6FD869D230AB79C00C070E5 /* Guessing Game Two.storyboard in Resources */,
 				B6E489962301623A00A0BC6F /* Assets.xcassets in Resources */,
-				B6E489C12301972D00A0BC6F /* GuessingGameTwoViewController.xib in Resources */,
 				B6E489942301623900A0BC6F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
