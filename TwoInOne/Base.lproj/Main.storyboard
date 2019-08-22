@@ -6,63 +6,46 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="q7c-Fp-MlI">
+        <!--Welcome-->
+        <scene sceneID="FWn-1V-REs">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="o0m-yD-b7i" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="yWi-Xe-RIv" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Sue-L0-0eK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRf-6C-Nvy" userLabel="Welcome Label">
-                                <rect key="frame" x="143" y="461.5" width="128.5" height="27.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="23"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="KRf-6C-Nvy" firstAttribute="centerY" secondItem="QCI-dV-3nd" secondAttribute="centerY" id="LuM-sB-xMh"/>
-                            <constraint firstItem="KRf-6C-Nvy" firstAttribute="centerX" secondItem="QCI-dV-3nd" secondAttribute="centerX" id="SJ0-ic-3yG"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="QCI-dV-3nd"/>
-                    </view>
-                </viewController>
+                <viewControllerPlaceholder storyboardName="Welcome" id="NcI-6c-lrd" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VFy-PL-vyK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1484.057971014493" y="115.84821428571428"/>
+            <point key="canvasLocation" x="-1505" y="-119"/>
         </scene>
         <!--Master-->
         <scene sceneID="ZLK-LC-ECb">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3P0-pb-U5t" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="1dJ-lA-E3Y" userLabel="Master" customClass="MasterViewController" customModule="TwoInOne" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="F9X-Yb-jVP">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="F9X-Yb-jVP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="MainDarkBackground"/>
+                        <color key="sectionIndexBackgroundColor" name="MainDarkBackground"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="MenuTableViewCellIdentifier" textLabel="ESM-av-6p1" style="IBUITableViewCellStyleDefault" id="79h-Hi-bHp" customClass="MenuTableViewCell" customModule="TwoInOne" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MenuTableViewCellIdentifier" textLabel="ESM-av-6p1" style="IBUITableViewCellStyleDefault" id="79h-Hi-bHp" customClass="MenuTableViewCell" customModule="TwoInOne" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="79h-Hi-bHp" id="Te6-2a-Ohm">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ESM-av-6p1">
-                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                            <rect key="frame" x="20" y="0.0" width="374" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
+                                            <color key="textColor" name="MainDarkText"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" name="MainBackground"/>
+                                <color key="tintColor" name="MainText"/>
                                 <connections>
                                     <outlet property="menuItemLabel" destination="ESM-av-6p1" id="oCL-5U-k9w"/>
                                 </connections>
@@ -75,12 +58,15 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Menu" id="dS3-Qy-e2F" userLabel="Menu"/>
                     <connections>
+                        <outlet property="tableView" destination="F9X-Yb-jVP" id="OmB-37-jow"/>
                         <segue destination="S5V-Ra-UXc" kind="showDetail" identifier="ShowDetailGuessingGame" id="11l-yM-Izs"/>
                         <segue destination="mws-4R-sab" kind="showDetail" identifier="ShowDetailGuessingGameTwo" id="3yT-fh-SJf"/>
                         <segue destination="rUR-yC-GHp" kind="showDetail" identifier="ShowDetailPairsGame" id="MTt-w1-b33"/>
                         <segue destination="RWn-Yd-uDL" kind="showDetail" identifier="ShowDetailRecords" id="wvT-Qk-VMc"/>
+                        <segue destination="NcI-6c-lrd" kind="showDetail" identifier="ShowWelcome" id="bQ8-X5-r7D"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3P0-pb-U5t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-749" y="-533"/>
         </scene>
@@ -91,6 +77,13 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ny7-OS-q93">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="Orange"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="1dJ-lA-E3Y" kind="relationship" relationship="rootViewController" id="nZv-b6-OWs"/>
@@ -106,7 +99,7 @@
                 <splitViewController id="Q9N-CG-ji2" sceneMemberID="viewController">
                     <connections>
                         <segue destination="0Yh-qq-uyt" kind="relationship" relationship="masterViewController" id="uJl-4F-KhR"/>
-                        <segue destination="yWi-Xe-RIv" kind="relationship" relationship="detailViewController" id="R8M-Iu-1lx"/>
+                        <segue destination="rUR-yC-GHp" kind="relationship" relationship="detailViewController" id="RyD-Uy-B5Y"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zdk-jc-zz2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -119,7 +112,7 @@
                 <viewControllerPlaceholder storyboardName="Guessing Game" id="S5V-Ra-UXc" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vPq-en-RS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-65" y="-573"/>
+            <point key="canvasLocation" x="-1478" y="-77"/>
         </scene>
         <!--Guessing Game Two-->
         <scene sceneID="8Db-iL-4DO">
@@ -127,7 +120,7 @@
                 <viewControllerPlaceholder storyboardName="Guessing Game Two" id="mws-4R-sab" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YfU-n7-Nvf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-46" y="-546"/>
+            <point key="canvasLocation" x="-1458" y="-30"/>
         </scene>
         <!--Records-->
         <scene sceneID="OLm-ip-XPy">
@@ -135,15 +128,36 @@
                 <viewControllerPlaceholder storyboardIdentifier="RecordsStoryboard" storyboardName="Records" id="RWn-Yd-uDL" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0oj-dE-7rg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-99" y="-493"/>
+            <point key="canvasLocation" x="-1510" y="61"/>
         </scene>
         <!--Pairs Game-->
         <scene sceneID="2SV-eI-bJv">
             <objects>
-                <viewControllerPlaceholder storyboardName="Pairs Game" id="rUR-yC-GHp" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="PairsGame" storyboardName="Pairs Game" id="rUR-yC-GHp" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vkl-vK-CBL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-86" y="-520"/>
+            <point key="canvasLocation" x="-1497" y="15"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="MainBackground">
+            <color red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainDarkBackground">
+            <color red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainDarkText">
+            <color red="1" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainText">
+            <color red="1" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Orange">
+            <color red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="RyD-Uy-B5Y"/>
+    </inferredMetricsTieBreakers>
+    <color key="tintColor" name="MainText"/>
 </document>

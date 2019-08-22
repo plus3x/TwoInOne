@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B62E9029230E9536006721E6 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62E9028230E9536006721E6 /* UIColor.swift */; };
 		B69FC9182303F34900531350 /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69FC9172303F34900531350 /* RecordsViewController.swift */; };
 		B69FC91A2303F36B00531350 /* Records.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B69FC9192303F36B00531350 /* Records.storyboard */; };
 		B69FC91C23040ABE00531350 /* RecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69FC91B23040ABE00531350 /* RecordTableViewCell.swift */; };
 		B69FC920230427C600531350 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69FC91F230427C600531350 /* Record.swift */; };
 		B69FC9222304300D00531350 /* RecordSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69FC9212304300D00531350 /* RecordSaver.swift */; };
 		B6E4898F2301623900A0BC6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E4898E2301623900A0BC6F /* AppDelegate.swift */; };
-		B6E489912301623900A0BC6F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E489902301623900A0BC6F /* MainViewController.swift */; };
 		B6E489942301623900A0BC6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6E489922301623900A0BC6F /* Main.storyboard */; };
 		B6E489962301623A00A0BC6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6E489952301623A00A0BC6F /* Assets.xcassets */; };
 		B6E489992301623A00A0BC6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6E489972301623A00A0BC6F /* LaunchScreen.storyboard */; };
@@ -28,6 +28,12 @@
 		B6FD8699230AA7AC00C070E5 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FD8698230AA7AC00C070E5 /* MenuItem.swift */; };
 		B6FD869B230AB5BC00C070E5 /* Guessing Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6FD869A230AB5BC00C070E5 /* Guessing Game.storyboard */; };
 		B6FD869D230AB79C00C070E5 /* Guessing Game Two.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6FD869C230AB79C00C070E5 /* Guessing Game Two.storyboard */; };
+		B6FD869F230B480F00C070E5 /* PairCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FD869E230B480F00C070E5 /* PairCollectionViewCell.swift */; };
+		B6FD86A1230B496700C070E5 /* Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FD86A0230B496700C070E5 /* Pair.swift */; };
+		B6FD86A4230BD4E300C070E5 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FD86A3230BD4E300C070E5 /* Array.swift */; };
+		B6FD86A9230D4FB300C070E5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FD86A8230D4FB300C070E5 /* WelcomeViewController.swift */; };
+		B6FD86AB230D4FF300C070E5 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6FD86AA230D4FF300C070E5 /* Welcome.storyboard */; };
+		B6FD86AD230D739700C070E5 /* PairsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FD86AC230D739700C070E5 /* PairsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B62E9028230E9536006721E6 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		B69FC9172303F34900531350 /* RecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
 		B69FC9192303F36B00531350 /* Records.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Records.storyboard; sourceTree = "<group>"; };
 		B69FC91B23040ABE00531350 /* RecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewCell.swift; sourceTree = "<group>"; };
@@ -55,7 +62,6 @@
 		B69FC9212304300D00531350 /* RecordSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSaver.swift; sourceTree = "<group>"; };
 		B6E4898B2301623900A0BC6F /* TwoInOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwoInOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6E4898E2301623900A0BC6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B6E489902301623900A0BC6F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B6E489932301623900A0BC6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B6E489952301623A00A0BC6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B6E489982301623A00A0BC6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -75,6 +81,12 @@
 		B6FD8698230AA7AC00C070E5 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		B6FD869A230AB5BC00C070E5 /* Guessing Game.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Guessing Game.storyboard"; sourceTree = "<group>"; };
 		B6FD869C230AB79C00C070E5 /* Guessing Game Two.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Guessing Game Two.storyboard"; sourceTree = "<group>"; };
+		B6FD869E230B480F00C070E5 /* PairCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairCollectionViewCell.swift; sourceTree = "<group>"; };
+		B6FD86A0230B496700C070E5 /* Pair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pair.swift; sourceTree = "<group>"; };
+		B6FD86A3230BD4E300C070E5 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		B6FD86A8230D4FB300C070E5 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		B6FD86AA230D4FF300C070E5 /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
+		B6FD86AC230D739700C070E5 /* PairsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,11 +167,12 @@
 		B6E4898D2301623900A0BC6F /* TwoInOne */ = {
 			isa = PBXGroup;
 			children = (
+				B6FD86A7230D4F9500C070E5 /* Welcome */,
+				B6FD86A2230BD4C500C070E5 /* Extensions */,
 				B6FD8697230AA78E00C070E5 /* Menu */,
 				B6FD8692230A9D6600C070E5 /* Pairs Game */,
 				B69FC9162303F32500531350 /* Records */,
 				B6E4898E2301623900A0BC6F /* AppDelegate.swift */,
-				B6E489902301623900A0BC6F /* MainViewController.swift */,
 				B69FC9152303F30A00531350 /* Guessing Game */,
 				B69FC9132303F2E700531350 /* Guessing Game Two */,
 				B6E489922301623900A0BC6F /* Main.storyboard */,
@@ -193,7 +206,10 @@
 			isa = PBXGroup;
 			children = (
 				B6FD8693230A9DB100C070E5 /* PairsViewController.swift */,
+				B6FD86AC230D739700C070E5 /* PairsTableViewCell.swift */,
+				B6FD86A0230B496700C070E5 /* Pair.swift */,
 				B6FD8695230A9DC700C070E5 /* Pairs Game.storyboard */,
+				B6FD869E230B480F00C070E5 /* PairCollectionViewCell.swift */,
 			);
 			path = "Pairs Game";
 			sourceTree = "<group>";
@@ -205,6 +221,24 @@
 				B6FD8698230AA7AC00C070E5 /* MenuItem.swift */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		B6FD86A2230BD4C500C070E5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B6FD86A3230BD4E300C070E5 /* Array.swift */,
+				B62E9028230E9536006721E6 /* UIColor.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B6FD86A7230D4F9500C070E5 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				B6FD86A8230D4FB300C070E5 /* WelcomeViewController.swift */,
+				B6FD86AA230D4FF300C070E5 /* Welcome.storyboard */,
+			);
+			path = Welcome;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +350,7 @@
 				B6FD8696230A9DC700C070E5 /* Pairs Game.storyboard in Resources */,
 				B6FD869B230AB5BC00C070E5 /* Guessing Game.storyboard in Resources */,
 				B6FD869D230AB79C00C070E5 /* Guessing Game Two.storyboard in Resources */,
+				B6FD86AB230D4FF300C070E5 /* Welcome.storyboard in Resources */,
 				B6E489962301623A00A0BC6F /* Assets.xcassets in Resources */,
 				B6E489942301623900A0BC6F /* Main.storyboard in Resources */,
 			);
@@ -342,16 +377,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6E489912301623900A0BC6F /* MainViewController.swift in Sources */,
+				B6FD86AD230D739700C070E5 /* PairsTableViewCell.swift in Sources */,
+				B6FD86A9230D4FB300C070E5 /* WelcomeViewController.swift in Sources */,
+				B6FD869F230B480F00C070E5 /* PairCollectionViewCell.swift in Sources */,
 				B6E4898F2301623900A0BC6F /* AppDelegate.swift in Sources */,
 				B69FC91C23040ABE00531350 /* RecordTableViewCell.swift in Sources */,
+				B6FD86A1230B496700C070E5 /* Pair.swift in Sources */,
 				B6E489C02301972D00A0BC6F /* GuessingGameTwoViewController.swift in Sources */,
 				B6FD868F230580FF00C070E5 /* MasterController.swift in Sources */,
 				B69FC9222304300D00531350 /* RecordSaver.swift in Sources */,
 				B6FD869123093F6E00C070E5 /* MenuTableViewCell.swift in Sources */,
 				B6FD8694230A9DB100C070E5 /* PairsViewController.swift in Sources */,
 				B69FC920230427C600531350 /* Record.swift in Sources */,
+				B62E9029230E9536006721E6 /* UIColor.swift in Sources */,
 				B6FD8699230AA7AC00C070E5 /* MenuItem.swift in Sources */,
+				B6FD86A4230BD4E300C070E5 /* Array.swift in Sources */,
 				B6E489BD2301668600A0BC6F /* GuessingGameViewController.swift in Sources */,
 				B69FC9182303F34900531350 /* RecordsViewController.swift in Sources */,
 			);

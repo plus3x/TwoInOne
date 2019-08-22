@@ -14,4 +14,29 @@ class MenuTableViewCell: UITableViewCell {
     
     @IBOutlet weak var menuItemLabel: UILabel!
     
+    var menuItem: MenuItem!
+    
+    override func select(_ sender: Any?) {
+        markAsSelected()
+    }
+ 
+    func configure(with menuItem: MenuItem) {
+        self.menuItem = menuItem
+        
+        menuItemLabel.text = menuItem.name
+        
+        if isSelected {
+            markAsSelected()
+        } else {
+            markAsDeselected()
+        }
+    }
+    
+    private func markAsSelected() {
+        menuItemLabel.textColor = .orange
+    }
+    
+    private func markAsDeselected() {
+        menuItemLabel.textColor = .mainText
+    }
 }
