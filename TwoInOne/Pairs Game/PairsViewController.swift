@@ -28,18 +28,17 @@ class PairsGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var index = 0
         pairs = Array(0 ..< amountOfRows).map { i in
             return Array(0 ..< amountOfColors).map { n in
-                index += 1
-                return Pair(index: index, color: self.palette[(i + n) % self.palette.count])
+                let index: Int = (i + n) % self.palette.count
+                
+                return Pair(index: index + 1, color: self.palette[index])
             }
         }
         
         tableView.estimatedRowHeight = 70
         tableView.rowHeight = UITableView.automaticDimension
     }
-
 }
 
 extension PairsGameViewController: UITableViewDelegate, UITableViewDataSource {
@@ -51,17 +50,17 @@ extension PairsGameViewController: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "\(section + 1)"
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        let header = view as! UITableViewHeaderFooterView
-        
-        header.backgroundView?.backgroundColor = nil
-        header.textLabel?.font = header.textLabel?.font.withSize(20)
-        header.textLabel?.textColor = .mainText
-    }
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return "\(section + 1)"
+//    }
+//
+//    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+//        let header = view as! UITableViewHeaderFooterView
+//
+//        header.backgroundView?.backgroundColor = nil
+//        header.textLabel?.font = header.textLabel?.font.withSize(20)
+//        header.textLabel?.textColor = .mainText
+//    }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
@@ -70,11 +69,40 @@ extension PairsGameViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PairsTableViewCell.identifier, for: indexPath) as! PairsTableViewCell
         
-        let pairs = self.pairs[indexPath.section]
-        cell.configure(with: pairs)
+        cell.section = indexPath.section
+        cell.delegate = self
+        cell.configure(with: indexPath.section)
         
         return cell
     }
     
+}
+
+extension PairsGameViewController: PairsGameViewControllerDelegate {
+    func getPairs() -> [[Pair]] {
+        return pairs
+    }
     
+    func changePlace(in section: Int, from fromIndexPath: IndexPath, to toIndexPath: IndexPath) {
+        let glassPair = pairs[section][toIndexPath.row]
+        
+        print("1")
+        
+        for i in 0 ..< pairs.count { print(pairs[i].map { $0.index }) }
+        
+        pairs[section][toIndexPath.row] = pairs[section][fromIndexPath.row]
+        pairs[section][fromIndexPath.row] = glassPair
+        
+        print("2")
+        
+        for i in 0 ..< pairs.count { print(pairs[i].map { $0.index }) }
+        
+        pairs = PairCollapser.perform(pairs)
+        
+        print("3")
+        
+        for i in 0 ..< pairs.count { print(pairs[i].map { $0.index }) }
+        
+        tableView.reloadData()
+    }
 }

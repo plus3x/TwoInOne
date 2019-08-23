@@ -24,6 +24,8 @@ class PairCollectionViewCell: UICollectionViewCell {
         self.pair = pair
         
         indexLabel.text = "\(pair.index)"
+        layer.cornerRadius = 3
+        layer.borderWidth = 0
         backgroundColor = pair.color
     }
     

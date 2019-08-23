@@ -8,7 +8,12 @@
 
 import UIKit
 
-struct Pair {
+class Pair {
     let index: Int
     let color: UIColor?
+    
+    init(index: Int, color: UIColor?) {
+        self.index = index
+        self.color = color
+    }
 }

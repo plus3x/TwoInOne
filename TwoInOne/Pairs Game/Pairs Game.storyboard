@@ -36,7 +36,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="LBw-cv-38H">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="770"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PairsTableViewCellIdentifier" id="mvv-u6-Qpd" customClass="PairsTableViewCell" customModule="TwoInOne" customModuleProvider="target">
@@ -47,7 +47,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lfC-g6-qN4">
-                                                    <rect key="frame" x="8" y="4" width="398" height="80"/>
+                                                    <rect key="frame" x="8" y="1" width="398" height="80"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="80" id="0AD-tt-gZ9"/>
@@ -67,11 +67,10 @@
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mdp-Td-Vyv" userLabel="Index Label">
-                                                                        <rect key="frame" x="8" y="8" width="11.5" height="25"/>
-                                                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
-                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <rect key="frame" x="8" y="8" width="12.5" height="30"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                                        <color key="textColor" name="MainBackground"/>
                                                                         <nil key="highlightedColor"/>
-                                                                        <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                         <size key="shadowOffset" width="1" height="-1"/>
                                                                     </label>
                                                                 </subviews>
@@ -93,9 +92,9 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="lfC-g6-qN4" firstAttribute="leading" secondItem="eF3-lw-aGv" secondAttribute="leading" constant="8" id="6EY-dU-CvE"/>
-                                                <constraint firstItem="lfC-g6-qN4" firstAttribute="top" secondItem="eF3-lw-aGv" secondAttribute="top" constant="4" id="7on-j5-PCY"/>
+                                                <constraint firstItem="lfC-g6-qN4" firstAttribute="top" secondItem="eF3-lw-aGv" secondAttribute="top" constant="1" id="7on-j5-PCY"/>
                                                 <constraint firstAttribute="trailing" secondItem="lfC-g6-qN4" secondAttribute="trailing" constant="8" id="Eel-CV-utq"/>
-                                                <constraint firstAttribute="bottom" secondItem="lfC-g6-qN4" secondAttribute="bottom" constant="4" id="OEj-E5-jOq"/>
+                                                <constraint firstAttribute="bottom" secondItem="lfC-g6-qN4" secondAttribute="bottom" constant="1" id="OEj-E5-jOq"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -113,7 +112,7 @@
                         <color key="backgroundColor" name="MainBackground"/>
                         <constraints>
                             <constraint firstItem="LBw-cv-38H" firstAttribute="leading" secondItem="U5V-XZ-JDr" secondAttribute="leading" id="1To-XG-aLT"/>
-                            <constraint firstItem="LBw-cv-38H" firstAttribute="top" secondItem="U5V-XZ-JDr" secondAttribute="top" id="Pb9-OX-WgW" userLabel="Table View.top = Safe Area.top "/>
+                            <constraint firstItem="LBw-cv-38H" firstAttribute="top" secondItem="U5V-XZ-JDr" secondAttribute="top" constant="4" id="Pb9-OX-WgW" userLabel="Table View.top = Safe Area.top "/>
                             <constraint firstItem="LBw-cv-38H" firstAttribute="bottom" secondItem="U5V-XZ-JDr" secondAttribute="bottom" id="b8x-3D-ph4"/>
                             <constraint firstItem="LBw-cv-38H" firstAttribute="trailing" secondItem="U5V-XZ-JDr" secondAttribute="trailing" id="tle-Og-eUe"/>
                         </constraints>
