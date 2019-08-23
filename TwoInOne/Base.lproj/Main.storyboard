@@ -16,7 +16,7 @@
                 <viewControllerPlaceholder storyboardName="Welcome" id="NcI-6c-lrd" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VFy-PL-vyK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1505" y="-119"/>
+            <point key="canvasLocation" x="-1508" y="-119"/>
         </scene>
         <!--Master-->
         <scene sceneID="ZLK-LC-ECb">
@@ -64,6 +64,7 @@
                         <segue destination="rUR-yC-GHp" kind="showDetail" identifier="ShowDetailPairsGame" id="MTt-w1-b33"/>
                         <segue destination="RWn-Yd-uDL" kind="showDetail" identifier="ShowDetailRecords" id="wvT-Qk-VMc"/>
                         <segue destination="NcI-6c-lrd" kind="showDetail" identifier="ShowWelcome" id="bQ8-X5-r7D"/>
+                        <segue destination="z28-Q0-w9l" kind="showDetail" identifier="ShowCSEGame" id="9Ve-zz-DTh"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3P0-pb-U5t" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -99,7 +100,7 @@
                 <splitViewController id="Q9N-CG-ji2" sceneMemberID="viewController">
                     <connections>
                         <segue destination="0Yh-qq-uyt" kind="relationship" relationship="masterViewController" id="uJl-4F-KhR"/>
-                        <segue destination="rUR-yC-GHp" kind="relationship" relationship="detailViewController" id="RyD-Uy-B5Y"/>
+                        <segue destination="rUR-yC-GHp" kind="relationship" relationship="detailViewController" id="lKP-dM-KZG"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zdk-jc-zz2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -112,7 +113,7 @@
                 <viewControllerPlaceholder storyboardName="Guessing Game" id="S5V-Ra-UXc" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vPq-en-RS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1478" y="-77"/>
+            <point key="canvasLocation" x="-1480" y="-76"/>
         </scene>
         <!--Guessing Game Two-->
         <scene sceneID="8Db-iL-4DO">
@@ -128,7 +129,15 @@
                 <viewControllerPlaceholder storyboardIdentifier="RecordsStoryboard" storyboardName="Records" id="RWn-Yd-uDL" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0oj-dE-7rg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1510" y="61"/>
+            <point key="canvasLocation" x="-1512" y="111"/>
+        </scene>
+        <!--CSE Game-->
+        <scene sceneID="RTY-6A-f5m">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CSE Game" id="z28-Q0-w9l" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6pu-cQ-red" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1499" y="62"/>
         </scene>
         <!--Pairs Game-->
         <scene sceneID="2SV-eI-bJv">
@@ -157,7 +166,7 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RyD-Uy-B5Y"/>
+        <segue reference="lKP-dM-KZG"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="MainText"/>
 </document>

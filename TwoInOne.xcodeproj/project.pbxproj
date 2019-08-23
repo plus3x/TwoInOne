@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B62E9029230E9536006721E6 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62E9028230E9536006721E6 /* UIColor.swift */; };
-		B62E902D230F46D2006721E6 /* PairCollapser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62E902C230F46D2006721E6 /* PairCollapser.swift */; };
+		B62E9030230FE1E1006721E6 /* CSE Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B62E902F230FE1E1006721E6 /* CSE Game.storyboard */; };
+		B62E9032230FE312006721E6 /* CSEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62E9031230FE312006721E6 /* CSEViewController.swift */; };
 		B69FC9182303F34900531350 /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69FC9172303F34900531350 /* RecordsViewController.swift */; };
 		B69FC91A2303F36B00531350 /* Records.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B69FC9192303F36B00531350 /* Records.storyboard */; };
 		B69FC91C23040ABE00531350 /* RecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69FC91B23040ABE00531350 /* RecordTableViewCell.swift */; };
@@ -56,7 +57,8 @@
 
 /* Begin PBXFileReference section */
 		B62E9028230E9536006721E6 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		B62E902C230F46D2006721E6 /* PairCollapser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairCollapser.swift; sourceTree = "<group>"; };
+		B62E902F230FE1E1006721E6 /* CSE Game.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "CSE Game.storyboard"; sourceTree = "<group>"; };
+		B62E9031230FE312006721E6 /* CSEViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSEViewController.swift; sourceTree = "<group>"; };
 		B69FC9172303F34900531350 /* RecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
 		B69FC9192303F36B00531350 /* Records.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Records.storyboard; sourceTree = "<group>"; };
 		B69FC91B23040ABE00531350 /* RecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewCell.swift; sourceTree = "<group>"; };
@@ -116,6 +118,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B62E902E230FE1BB006721E6 /* CSE Game */ = {
+			isa = PBXGroup;
+			children = (
+				B62E902F230FE1E1006721E6 /* CSE Game.storyboard */,
+				B62E9031230FE312006721E6 /* CSEViewController.swift */,
+			);
+			path = "CSE Game";
+			sourceTree = "<group>";
+		};
 		B69FC9132303F2E700531350 /* Guessing Game Two */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +180,7 @@
 		B6E4898D2301623900A0BC6F /* TwoInOne */ = {
 			isa = PBXGroup;
 			children = (
+				B62E902E230FE1BB006721E6 /* CSE Game */,
 				B6FD86A7230D4F9500C070E5 /* Welcome */,
 				B6FD86A2230BD4C500C070E5 /* Extensions */,
 				B6FD8697230AA78E00C070E5 /* Menu */,
@@ -210,7 +222,6 @@
 				B6FD8693230A9DB100C070E5 /* PairsViewController.swift */,
 				B6FD86AC230D739700C070E5 /* PairsTableViewCell.swift */,
 				B6FD86A0230B496700C070E5 /* Pair.swift */,
-				B62E902C230F46D2006721E6 /* PairCollapser.swift */,
 				B6FD8695230A9DC700C070E5 /* Pairs Game.storyboard */,
 				B6FD869E230B480F00C070E5 /* PairCollectionViewCell.swift */,
 			);
@@ -349,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B69FC91A2303F36B00531350 /* Records.storyboard in Resources */,
+				B62E9030230FE1E1006721E6 /* CSE Game.storyboard in Resources */,
 				B6E489992301623A00A0BC6F /* LaunchScreen.storyboard in Resources */,
 				B6FD8696230A9DC700C070E5 /* Pairs Game.storyboard in Resources */,
 				B6FD869B230AB5BC00C070E5 /* Guessing Game.storyboard in Resources */,
@@ -386,8 +398,8 @@
 				B6E4898F2301623900A0BC6F /* AppDelegate.swift in Sources */,
 				B69FC91C23040ABE00531350 /* RecordTableViewCell.swift in Sources */,
 				B6FD86A1230B496700C070E5 /* Pair.swift in Sources */,
+				B62E9032230FE312006721E6 /* CSEViewController.swift in Sources */,
 				B6E489C02301972D00A0BC6F /* GuessingGameTwoViewController.swift in Sources */,
-				B62E902D230F46D2006721E6 /* PairCollapser.swift in Sources */,
 				B6FD868F230580FF00C070E5 /* MasterController.swift in Sources */,
 				B69FC9222304300D00531350 /* RecordSaver.swift in Sources */,
 				B6FD869123093F6E00C070E5 /* MenuTableViewCell.swift in Sources */,

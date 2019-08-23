@@ -24,15 +24,18 @@ class PairsGameViewController: UIViewController {
         .paleGoldenrod,
         .darkSalmon,
     ]
+    var selectedCellIndexPath: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         pairs = Array(0 ..< amountOfRows).map { i in
+            let firstIndex = Int.random(in: 0...palette.count)
+            
             return Array(0 ..< amountOfColors).map { n in
-                let index: Int = (i + n) % self.palette.count
+                let color = self.palette[(firstIndex + n) % self.palette.count]
                 
-                return Pair(index: index + 1, color: self.palette[index])
+                return Pair(index: n + 1, color: color)
             }
         }
         
@@ -68,10 +71,9 @@ extension PairsGameViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PairsTableViewCell.identifier, for: indexPath) as! PairsTableViewCell
-        
-        cell.section = indexPath.section
+    
         cell.delegate = self
-        cell.configure(with: indexPath.section)
+        cell.configure(in: indexPath.section, with: pairs[indexPath.section])
         
         return cell
     }
@@ -79,30 +81,73 @@ extension PairsGameViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension PairsGameViewController: PairsGameViewControllerDelegate {
-    func getPairs() -> [[Pair]] {
-        return pairs
-    }
-    
-    func changePlace(in section: Int, from fromIndexPath: IndexPath, to toIndexPath: IndexPath) {
-        let glassPair = pairs[section][toIndexPath.row]
+    func select(in section: Int, at indexPath: IndexPath) {
+        if let selectedCellIndexPath = selectedCellIndexPath {
+            self.selectedCellIndexPath = nil
+            pairs[selectedCellIndexPath.section][selectedCellIndexPath.row].state = .deselecting
+            pairs[section][indexPath.row].state = .normal
+            
+            let selectedPair = pairs[selectedCellIndexPath.section][selectedCellIndexPath.row]
         
-        print("1")
-        
-        for i in 0 ..< pairs.count { print(pairs[i].map { $0.index }) }
-        
-        pairs[section][toIndexPath.row] = pairs[section][fromIndexPath.row]
-        pairs[section][fromIndexPath.row] = glassPair
-        
-        print("2")
-        
-        for i in 0 ..< pairs.count { print(pairs[i].map { $0.index }) }
-        
-        pairs = PairCollapser.perform(pairs)
-        
-        print("3")
-        
-        for i in 0 ..< pairs.count { print(pairs[i].map { $0.index }) }
-        
-        tableView.reloadData()
+            pairs[selectedCellIndexPath.section][selectedCellIndexPath.row] = pairs[section][indexPath.row]
+            pairs[section][indexPath.row] = selectedPair
+            
+            let firstSection = selectedCellIndexPath.section
+            let firstPair = pairs[selectedCellIndexPath.section][selectedCellIndexPath.row]
+            let firstPairIndexPath = selectedCellIndexPath
+            
+            if firstPairIndexPath.row > 0 {
+                let leftPair = pairs[firstPairIndexPath.section][firstPairIndexPath.row - 1]
+                
+                if firstPair.index == leftPair.index || firstPair.color == leftPair.color {
+                    leftPair.state = .collapsing
+                    firstPair.state = .collapsing
+                }
+            }
+            
+            if firstPairIndexPath.row < pairs[firstSection].count - 1 {
+                let rightPair = pairs[firstPairIndexPath.section][firstPairIndexPath.row + 1]
+                
+                if firstPair.index == rightPair.index || firstPair.color == rightPair.color {
+                    rightPair.state = .collapsing
+                    firstPair.state = .collapsing
+                }
+            }
+            
+            let secondSection = section
+            let secondPair = pairs[section][indexPath.row]
+            let secondPairIndexPath = IndexPath(row: indexPath.row, section: section)
+            
+            if secondPairIndexPath.row > 0 {
+                let leftPair = pairs[secondPairIndexPath.section][secondPairIndexPath.row - 1]
+                
+                if secondPair.index == leftPair.index || secondPair.color == leftPair.color {
+                    leftPair.state = .collapsing
+                    secondPair.state = .collapsing
+                }
+            }
+            
+            if secondPairIndexPath.row < pairs[secondSection].count - 1 {
+                let rightPair = pairs[secondPairIndexPath.section][secondPairIndexPath.row + 1]
+                
+                if secondPair.index == rightPair.index || secondPair.color == rightPair.color {
+                    rightPair.state = .collapsing
+                    secondPair.state = .collapsing
+                }
+            }
+            
+            // Animation state to UICollectionViewCell collapse
+            // tableView.reloadData()
+            
+            pairs[firstSection].removeAll(where: { $0.state == .collapsing })
+            pairs[secondSection].removeAll(where: { $0.state == .collapsing })
+            
+            tableView.reloadData()
+        } else {
+            self.selectedCellIndexPath = IndexPath(row: indexPath.row, section: section)
+            pairs[section][indexPath.row].state = .selecting
+            
+            tableView.reloadData()
+        }
     }
 }

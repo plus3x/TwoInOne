@@ -9,8 +9,7 @@
 import UIKit
 
 protocol PairsGameViewControllerDelegate: class {
-    func getPairs() -> [[Pair]]
-    func changePlace(in section: Int, from fromIndexPath: IndexPath, to toIndexPath: IndexPath)
+    func select(in section: Int, at indexPath: IndexPath)
 }
 
 class PairsTableViewCell: UITableViewCell {
@@ -23,12 +22,10 @@ class PairsTableViewCell: UITableViewCell {
     weak var delegate: PairsGameViewControllerDelegate? = nil
     
     var pairs: [Pair] = []
-    var selectedPairIndexPath: IndexPath?
     
-    func configure(with section: Int) {
+    func configure(in section: Int, with pairs: [Pair]) {
         self.section = section
-        
-        pairs = (delegate?.getPairs()[section])!
+        self.pairs = pairs
         
         collectionView.reloadData()
     }
@@ -45,41 +42,12 @@ extension PairsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PairCollectionViewCell.identifier, for: indexPath) as! PairCollectionViewCell
         
         let pair = pairs[indexPath.row]
-        cell.isSelected = selectedPairIndexPath == indexPath
         cell.configure(with: pair)
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! PairCollectionViewCell
-        
-        if let selectedPairIndexPath = self.selectedPairIndexPath {
-            delegate?.changePlace(in: section, from: selectedPairIndexPath, to: indexPath)
-            
-            configure(with: selectedPairIndexPath.section)
-            
-            self.selectedPairIndexPath = nil
-        } else {
-            selectedPairIndexPath = indexPath
-        }
-        
-        let borderWidthAnimation: CABasicAnimation = CABasicAnimation(keyPath: "borderWidth")
-        borderWidthAnimation.fromValue = 0
-        borderWidthAnimation.toValue = 3
-        borderWidthAnimation.duration = 0.3
-        cell.layer.add(borderWidthAnimation, forKey: "Width")
-        cell.layer.borderWidth = 3
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        guard let cell = collectionView.cellForItem(at: indexPath) as? PairCollectionViewCell else { return }
-        
-        let borderWidthAnimation: CABasicAnimation = CABasicAnimation(keyPath: "borderWidth")
-        borderWidthAnimation.fromValue = 3
-        borderWidthAnimation.toValue = 0
-        borderWidthAnimation.duration = 0.3
-        cell.layer.add(borderWidthAnimation, forKey: "Width")
-        cell.layer.borderWidth = 0
+        delegate!.select(in: section, at: indexPath)
     }
 }

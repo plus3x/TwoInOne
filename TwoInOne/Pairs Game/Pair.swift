@@ -9,8 +9,16 @@
 import UIKit
 
 class Pair {
+    enum State: String {
+        case normal
+        case selecting, selected
+        case deselecting
+        case collapsing
+    }
+    
     let index: Int
     let color: UIColor?
+    var state: State = .normal
     
     init(index: Int, color: UIColor?) {
         self.index = index

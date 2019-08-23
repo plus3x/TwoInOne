@@ -17,6 +17,7 @@ class MasterViewController: UIViewController {
         MenuItem(name: "Guessing Game", segue: "ShowDetailGuessingGame"),
         MenuItem(name: "Guessing Game II", segue: "ShowDetailGuessingGameTwo"),
         MenuItem(name: "Pairs Game", segue: "ShowDetailPairsGame"),
+        MenuItem(name: "Colored Squares Everywhere Game", segue: "ShowCSEGame"),
         MenuItem(name: "Records", segue: "ShowDetailRecords"),
     ]
     
