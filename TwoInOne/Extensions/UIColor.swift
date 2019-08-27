@@ -17,6 +17,7 @@ extension UIColor {
     static let tan = UIColor(named: "Tan")
     static let paleGoldenrod = UIColor(named: "Pale Goldenrod")
     static let darkSalmon = UIColor(named: "Dark Salmon")
+    static let yellow = UIColor(named: "Yellow")
     
     static let mainText = UIColor(named: "MainText")
     static let mainBackground = UIColor(named: "MainBackground")

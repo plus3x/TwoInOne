@@ -23,6 +23,7 @@ class PairsGameViewController: UIViewController {
         .tan,
         .paleGoldenrod,
         .darkSalmon,
+        .yellow,
     ]
     var selectedCellIndexPath: IndexPath?
     
@@ -88,7 +89,6 @@ extension PairsGameViewController: PairsGameViewControllerDelegate {
             pairs[section][indexPath.row].state = .normal
             
             let selectedPair = pairs[selectedCellIndexPath.section][selectedCellIndexPath.row]
-        
             pairs[selectedCellIndexPath.section][selectedCellIndexPath.row] = pairs[section][indexPath.row]
             pairs[section][indexPath.row] = selectedPair
             
@@ -107,7 +107,7 @@ extension PairsGameViewController: PairsGameViewControllerDelegate {
             
             if firstPairIndexPath.row < pairs[firstSection].count - 1 {
                 let rightPair = pairs[firstPairIndexPath.section][firstPairIndexPath.row + 1]
-                
+
                 if firstPair.index == rightPair.index || firstPair.color == rightPair.color {
                     rightPair.state = .collapsing
                     firstPair.state = .collapsing
@@ -129,7 +129,7 @@ extension PairsGameViewController: PairsGameViewControllerDelegate {
             
             if secondPairIndexPath.row < pairs[secondSection].count - 1 {
                 let rightPair = pairs[secondPairIndexPath.section][secondPairIndexPath.row + 1]
-                
+
                 if secondPair.index == rightPair.index || secondPair.color == rightPair.color {
                     rightPair.state = .collapsing
                     secondPair.state = .collapsing

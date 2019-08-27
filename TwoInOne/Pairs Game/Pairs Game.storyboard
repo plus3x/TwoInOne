@@ -1543,7 +1543,7 @@
                                                                 <outlet property="indexLabel" destination="wJ4-2U-C1N" id="OxU-PS-rAU"/>
                                                             </connections>
                                                         </collectionViewCell>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="0Py-Iy-1kO" customClass="PairCollectionViewCell" customModule="TwoInOne" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="none" id="0Py-Iy-1kO" customClass="PairCollectionViewCell" customModule="TwoInOne" customModuleProvider="target">
                                                             <rect key="frame" x="85" y="5.5" width="75" height="70"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">

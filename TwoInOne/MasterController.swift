@@ -21,7 +21,7 @@ class MasterViewController: UIViewController {
         MenuItem(name: "Records", segue: "ShowDetailRecords"),
     ]
     
-    var selectedCellIndexPath = IndexPath(row: 3, section: 0)
+    var selectedCellIndexPath = IndexPath(row: 4, section: 0)
     var firstTime = true
     
     override func viewDidAppear(_ animated: Bool) {

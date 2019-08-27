@@ -25,8 +25,8 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="F9X-Yb-jVP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" name="MainDarkBackground"/>
-                        <color key="sectionIndexBackgroundColor" name="MainDarkBackground"/>
+                        <color key="backgroundColor" name="MainBackground"/>
+                        <color key="sectionIndexBackgroundColor" name="MainBackground"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MenuTableViewCellIdentifier" textLabel="ESM-av-6p1" style="IBUITableViewCellStyleDefault" id="79h-Hi-bHp" customClass="MenuTableViewCell" customModule="TwoInOne" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
@@ -39,7 +39,7 @@
                                             <rect key="frame" x="20" y="0.0" width="374" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
-                                            <color key="textColor" name="MainDarkText"/>
+                                            <color key="textColor" name="MainText"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -69,7 +69,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3P0-pb-U5t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-749" y="-533"/>
+            <point key="canvasLocation" x="-778" y="-533"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vKO-xW-In0">
@@ -80,9 +80,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" name="Orange"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                        <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
@@ -100,12 +97,12 @@
                 <splitViewController id="Q9N-CG-ji2" sceneMemberID="viewController">
                     <connections>
                         <segue destination="0Yh-qq-uyt" kind="relationship" relationship="masterViewController" id="uJl-4F-KhR"/>
-                        <segue destination="rUR-yC-GHp" kind="relationship" relationship="detailViewController" id="lKP-dM-KZG"/>
+                        <segue destination="z28-Q0-w9l" kind="relationship" relationship="detailViewController" id="RGM-2M-Cmb"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zdk-jc-zz2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2304" y="-192"/>
+            <point key="canvasLocation" x="-2248" y="-220"/>
         </scene>
         <!--Guessing Game-->
         <scene sceneID="JmF-xZ-Qs9">
@@ -134,7 +131,7 @@
         <!--CSE Game-->
         <scene sceneID="RTY-6A-f5m">
             <objects>
-                <viewControllerPlaceholder storyboardName="CSE Game" id="z28-Q0-w9l" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="CSEGameStoryboard" storyboardName="CSE Game" id="z28-Q0-w9l" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6pu-cQ-red" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1499" y="62"/>
@@ -152,12 +149,6 @@
         <namedColor name="MainBackground">
             <color red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="MainDarkBackground">
-            <color red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="MainDarkText">
-            <color red="1" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="MainText">
             <color red="1" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -166,7 +157,7 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lKP-dM-KZG"/>
+        <segue reference="9Ve-zz-DTh"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="MainText"/>
 </document>

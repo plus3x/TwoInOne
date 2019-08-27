@@ -19,41 +19,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="qrJ-dM-Z2q">
-                                <rect key="frame" x="16" y="104" width="382" height="742"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="qrJ-dM-Z2q">
+                                <rect key="frame" x="16" y="104" width="382" height="463.5"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Color" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MW1-3e-qwR" userLabel="ChooseLabel">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="25.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <color key="textColor" name="MainText"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="4dv-IU-enW">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="363"/>
+                                        <rect key="frame" x="0.0" y="41.5" width="382" height="200"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qcv-Av-MCc" userLabel="Red View">
-                                                <rect key="frame" x="0.0" y="0.0" width="116.5" height="363"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qcv-Av-MCc" userLabel="First Color View">
+                                                <rect key="frame" x="0.0" y="0.0" width="116.5" height="200"/>
                                                 <color key="backgroundColor" name="Red"/>
+                                                <gestureRecognizers/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="AV1-cC-PZM" appends="YES" id="iR6-Ep-T7z"/>
+                                                </connections>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vtf-Eh-9L2" userLabel="Blue View">
-                                                <rect key="frame" x="132.5" y="0.0" width="117" height="363"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vtf-Eh-9L2" userLabel="Second Color View">
+                                                <rect key="frame" x="132.5" y="0.0" width="117" height="200"/>
                                                 <color key="backgroundColor" name="Blue"/>
+                                                <gestureRecognizers/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="Mcx-xG-bgd" appends="YES" id="jDN-ci-U8d"/>
+                                                </connections>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="owS-5v-wlL" userLabel="Green View">
-                                                <rect key="frame" x="265.5" y="0.0" width="116.5" height="363"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="owS-5v-wlL" userLabel="Third Color View">
+                                                <rect key="frame" x="265.5" y="0.0" width="116.5" height="200"/>
                                                 <color key="backgroundColor" name="Green"/>
+                                                <gestureRecognizers/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="opN-jW-OdT" appends="YES" id="Qhu-Xk-aUs"/>
+                                                </connections>
                                             </view>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="t6O-NI-Siy"/>
+                                        </constraints>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My palette:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ds1-6X-UlJ" userLabel="Palette Label">
+                                        <rect key="frame" x="0.0" y="257.5" width="382" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="PFz-NH-B8C"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" name="MainText"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <collectionView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rvZ-D7-Zyq">
-                                        <rect key="frame" x="0.0" y="379" width="382" height="363"/>
+                                        <rect key="frame" x="0.0" y="313.5" width="382" height="150"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <collectionViewLayout key="collectionViewLayout" id="b2A-2z-Ywx"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="r5f-0A-oOB"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="p0z-de-NtP">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PaletteCollectionViewCellIdentifier" id="93g-mQ-7nb">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="PaletteCollectionViewCellIdentifier" id="93g-mQ-7nb" customClass="CSEPaletteCollectionViewCell" customModule="TwoInOne" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </view>
-                                                <color key="backgroundColor" name="Green"/>
                                             </collectionViewCell>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Zhe-V8-qjw">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="" id="Zhe-V8-qjw">
                                                 <rect key="frame" x="66.5" y="0.0" width="50" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -62,7 +99,7 @@
                                                 </view>
                                                 <color key="backgroundColor" name="Red"/>
                                             </collectionViewCell>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="mkn-Np-1g8">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="" id="mkn-Np-1g8">
                                                 <rect key="frame" x="133" y="0.0" width="50" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -71,7 +108,7 @@
                                                 </view>
                                                 <color key="backgroundColor" name="Green"/>
                                             </collectionViewCell>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="0zS-cZ-4v5">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="" id="0zS-cZ-4v5">
                                                 <rect key="frame" x="199" y="0.0" width="50" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -80,7 +117,7 @@
                                                 </view>
                                                 <color key="backgroundColor" name="Blue"/>
                                             </collectionViewCell>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="UyP-sG-DjS">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="" id="UyP-sG-DjS">
                                                 <rect key="frame" x="265.5" y="0.0" width="50" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -91,8 +128,8 @@
                                             </collectionViewCell>
                                         </cells>
                                         <connections>
-                                            <outlet property="dataSource" destination="D2I-e4-aur" id="EI9-5a-Lsx"/>
-                                            <outlet property="delegate" destination="D2I-e4-aur" id="LzA-sI-n10"/>
+                                            <outlet property="dataSource" destination="D2I-e4-aur" id="HKJ-8Q-6o6"/>
+                                            <outlet property="delegate" destination="D2I-e4-aur" id="gFh-Eu-Nds"/>
                                         </connections>
                                     </collectionView>
                                 </subviews>
@@ -103,12 +140,11 @@
                             <constraint firstItem="sbM-aV-5gu" firstAttribute="trailing" secondItem="qrJ-dM-Z2q" secondAttribute="trailing" constant="16" id="CfY-4c-f6c"/>
                             <constraint firstItem="qrJ-dM-Z2q" firstAttribute="top" secondItem="sbM-aV-5gu" secondAttribute="top" constant="16" id="Hih-G8-lZH"/>
                             <constraint firstItem="qrJ-dM-Z2q" firstAttribute="leading" secondItem="sbM-aV-5gu" secondAttribute="leading" constant="16" id="eJv-Mk-YKd"/>
-                            <constraint firstItem="sbM-aV-5gu" firstAttribute="bottom" secondItem="qrJ-dM-Z2q" secondAttribute="bottom" constant="16" id="zjk-Qr-ufj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sbM-aV-5gu"/>
                     </view>
                     <navigationItem key="navigationItem" title="CSE Game" id="Rpv-Z2-Ev3">
-                        <barButtonItem key="rightBarButtonItem" title="Help" id="ILj-Kh-K2h">
+                        <barButtonItem key="rightBarButtonItem" title="Help" style="done" id="ILj-Kh-K2h">
                             <connections>
                                 <action selector="onHelpButtonTap:" destination="D2I-e4-aur" id="x7X-kF-LfC"/>
                             </connections>
@@ -116,10 +152,29 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="firstColorView" destination="qcv-Av-MCc" id="Pes-xg-Ukz"/>
+                        <outlet property="myPaletteCollectionView" destination="rvZ-D7-Zyq" id="54g-P0-iT8"/>
+                        <outlet property="secondColorView" destination="Vtf-Eh-9L2" id="tQh-pA-TZN"/>
+                        <outlet property="thirdColorView" destination="owS-5v-wlL" id="G1e-Mf-bFY"/>
                         <segue destination="sof-SD-E0N" kind="show" identifier="ShowHelp" id="bES-Ny-ESj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gdo-tH-7Hb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="AV1-cC-PZM" userLabel="First Color View Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="onFirstColorViewTap:" destination="D2I-e4-aur" id="bDe-K5-3e8"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Mcx-xG-bgd" userLabel="Second Color View Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="onSecondViewColorTap:" destination="D2I-e4-aur" id="V1w-xm-0WS"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="opN-jW-OdT" userLabel="Third Color View Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="onThirdColorViewTap:" destination="D2I-e4-aur" id="1vk-Mm-FrO"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="26" y="82"/>
         </scene>
@@ -180,6 +235,38 @@
             </objects>
             <point key="canvasLocation" x="815.94202898550736" y="81.696428571428569"/>
         </scene>
+        <!--CRE Game Congratulations-->
+        <scene sceneID="BDv-i3-zlc">
+            <objects>
+                <viewController storyboardIdentifier="CSECongratulationsController" id="aaA-sn-3LS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Buc-Qy-VZA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations!!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvG-3e-Oim">
+                                <rect key="frame" x="112" y="462" width="190" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="fOu-4l-Dij"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="21"/>
+                                <color key="textColor" name="Orange"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="MainBackground"/>
+                        <constraints>
+                            <constraint firstItem="yvG-3e-Oim" firstAttribute="centerY" secondItem="cDI-Y9-Wrg" secondAttribute="centerY" id="UrQ-KL-Enc"/>
+                            <constraint firstItem="yvG-3e-Oim" firstAttribute="centerX" secondItem="cDI-Y9-Wrg" secondAttribute="centerX" id="vU9-gq-hG0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cDI-Y9-Wrg"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="CRE Game Congratulations" id="gyI-6K-Ikq"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OW7-mY-pVI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="25" y="741"/>
+        </scene>
     </scenes>
     <resources>
         <namedColor name="Blue">
@@ -193,6 +280,9 @@
         </namedColor>
         <namedColor name="MainText">
             <color red="1" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Orange">
+            <color red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Red">
             <color red="1" green="0.30980392156862746" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
