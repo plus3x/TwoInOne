@@ -47,7 +47,7 @@
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cos-35-eKQ">
                                                 <rect key="frame" x="108" y="2.5" width="30" height="30"/>
-                                                <color key="tintColor" name="Orange"/>
+                                                <color key="tintColor" name="Orange Custom"/>
                                                 <state key="normal" title="OK"/>
                                                 <connections>
                                                     <action selector="onOkTap:" destination="aEB-aH-Drm" eventType="touchUpInside" id="HvS-Po-vU4"/>
@@ -122,7 +122,7 @@
         <namedColor name="MainText">
             <color red="1" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="Orange">
+        <namedColor name="Orange Custom">
             <color red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>

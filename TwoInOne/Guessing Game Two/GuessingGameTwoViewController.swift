@@ -89,6 +89,14 @@ class GuessingGameTwoViewController: UIViewController, UITextFieldDelegate {
         case .greater: guessMax = guess
         }
         
+        guard (guessMin + 1) < guessMax else {
+            setNumberMenu(enabled: true)
+            numberField.becomeFirstResponder()
+            setGuessingMenu(enabled: false)
+            showAlert("Wrong suggestion for result calculations! Game was restarted!")
+            return
+        }
+        
         guess = Int.random(in: (guessMin + 1) ..< guessMax)
         
         guessLabel.text = "\(guess)"
@@ -106,17 +114,23 @@ class GuessingGameTwoViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func setNumberMenu(enabled: Bool) {
-        okButton.isEnabled = enabled
-        numberField.isEnabled = enabled
+        UIView.animate(withDuration: 0.3, animations: {
+            self.okButton.isHidden = !enabled
+            self.numberField.isEnabled = enabled
+            self.view.layoutIfNeeded()
+        })
     }
     
     private func setGuessingMenu(enabled: Bool) {
-        guessLabel.isHidden = !enabled
-        attemptsLabel.isHidden = !enabled
-        attemptsCountLabel.isHidden = !enabled
-        lessButton.isEnabled = enabled
-        exactlyButton.isEnabled = enabled
-        greaterButton.isEnabled = enabled
+        UIView.animate(withDuration: 0.3, animations: {
+            self.guessLabel.isHidden = !enabled
+            self.attemptsLabel.isHidden = !enabled
+            self.attemptsCountLabel.isHidden = !enabled
+            self.lessButton.isHidden = !enabled
+            self.exactlyButton.isHidden = !enabled
+            self.greaterButton.isHidden = !enabled
+            self.view.layoutIfNeeded()
+        })
     }
     
     private func increeseAttempts() {

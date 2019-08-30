@@ -13,25 +13,31 @@ class MasterViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     let menuItems = [
-        MenuItem(name: "Welcome", segue: "ShowWelcome"),
-        MenuItem(name: "Guessing Game", segue: "ShowDetailGuessingGame"),
-        MenuItem(name: "Guessing Game II", segue: "ShowDetailGuessingGameTwo"),
-        MenuItem(name: "Pairs Game", segue: "ShowDetailPairsGame"),
-        MenuItem(name: "Colored Squares Everywhere Game", segue: "ShowCSEGame"),
-        MenuItem(name: "Records", segue: "ShowDetailRecords"),
+        MenuItem(name: "Welcome", segue: "ShowWelcome", selected: false),
+        MenuItem(name: "Guessing Game", segue: "ShowDetailGuessingGame", selected: false),
+        MenuItem(name: "Guessing Game II", segue: "ShowDetailGuessingGameTwo", selected: false),
+        MenuItem(name: "Pairs Game", segue: "ShowDetailPairsGame", selected: false),
+        MenuItem(name: "Colored Squares Everywhere Game", segue: "ShowCSEGame", selected: true),
+        MenuItem(name: "Records", segue: "ShowDetailRecords", selected: false),
     ]
     
     var selectedCellIndexPath = IndexPath(row: 4, section: 0)
-    var firstTime = true
+//    var firstTime = true
     
-    override func viewDidAppear(_ animated: Bool) {
-        if firstTime {
-            tableView.reloadData()
-            firstTime = false
-        }
-        
-        super.viewDidAppear(animated)
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//
+//        if firstTime {
+//            tableView.reloadData()
+//            firstTime = false
+//        }
+//        tableView.reloadRows(at: [selectedCellIndexPath], with: .automatic)
+//    }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        tableView.reloadRows(at: [selectedCellIndexPath], with: .automatic)
+//    }
 }
 
 extension MasterViewController: UITableViewDelegate, UITableViewDataSource {
@@ -43,8 +49,8 @@ extension MasterViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MenuTableViewCell.identifier, for: indexPath) as! MenuTableViewCell
         
-        let menuItem = menuItems[indexPath.row]
-        cell.isSelected = selectedCellIndexPath == indexPath
+        var menuItem = menuItems[indexPath.row]
+        menuItem.selected = selectedCellIndexPath == indexPath
         cell.configure(with: menuItem)
         
         return cell

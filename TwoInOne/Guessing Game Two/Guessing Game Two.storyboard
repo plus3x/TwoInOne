@@ -92,7 +92,7 @@
                                                     <constraint firstAttribute="height" constant="35" id="EnH-ch-SVj"/>
                                                 </constraints>
                                                 <state key="normal" title="OK">
-                                                    <color key="titleColor" name="Orange"/>
+                                                    <color key="titleColor" name="Orange Custom"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="onOkButtonTap:" destination="7gF-LH-S1v" eventType="touchUpInside" id="OE0-Qk-B6u"/>
@@ -131,7 +131,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXW-8T-fig">
                                         <rect key="frame" x="0.0" y="0.0" width="122" height="35"/>
                                         <state key="normal" title="Less">
-                                            <color key="titleColor" name="Orange"/>
+                                            <color key="titleColor" name="Orange Custom"/>
                                         </state>
                                         <connections>
                                             <action selector="onLessButtonTap:" destination="7gF-LH-S1v" eventType="touchUpInside" id="ha9-HD-J9D"/>
@@ -140,7 +140,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A5n-tS-kT5">
                                         <rect key="frame" x="130" y="0.0" width="122" height="35"/>
                                         <state key="normal" title="Exactly">
-                                            <color key="titleColor" name="Orange"/>
+                                            <color key="titleColor" name="Orange Custom"/>
                                         </state>
                                         <connections>
                                             <action selector="onExactlyButtonTap:" destination="7gF-LH-S1v" eventType="touchUpInside" id="2xA-Xd-IPs"/>
@@ -149,7 +149,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uW4-mc-Gvi">
                                         <rect key="frame" x="260" y="0.0" width="122" height="35"/>
                                         <state key="normal" title="Greater">
-                                            <color key="titleColor" name="Orange"/>
+                                            <color key="titleColor" name="Orange Custom"/>
                                         </state>
                                         <connections>
                                             <action selector="onGreaterButtonTap:" destination="7gF-LH-S1v" eventType="touchUpInside" id="KyO-Rm-2ad"/>
@@ -207,7 +207,7 @@
         <namedColor name="MainText">
             <color red="1" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="Orange">
+        <namedColor name="Orange Custom">
             <color red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>

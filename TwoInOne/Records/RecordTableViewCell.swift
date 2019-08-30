@@ -12,8 +12,5 @@ class RecordTableViewCell: UITableViewCell {
     
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var attemptsLabel: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
+
 }

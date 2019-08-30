@@ -58,7 +58,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Menu" id="dS3-Qy-e2F" userLabel="Menu"/>
                     <connections>
-                        <outlet property="tableView" destination="F9X-Yb-jVP" id="OmB-37-jow"/>
+                        <outlet property="tableView" destination="F9X-Yb-jVP" id="BgC-QI-CaV"/>
                         <segue destination="S5V-Ra-UXc" kind="showDetail" identifier="ShowDetailGuessingGame" id="11l-yM-Izs"/>
                         <segue destination="mws-4R-sab" kind="showDetail" identifier="ShowDetailGuessingGameTwo" id="3yT-fh-SJf"/>
                         <segue destination="rUR-yC-GHp" kind="showDetail" identifier="ShowDetailPairsGame" id="MTt-w1-b33"/>
@@ -78,7 +78,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ny7-OS-q93">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" name="Orange"/>
+                        <color key="barTintColor" name="Orange Custom"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
@@ -97,7 +97,6 @@
                 <splitViewController id="Q9N-CG-ji2" sceneMemberID="viewController">
                     <connections>
                         <segue destination="0Yh-qq-uyt" kind="relationship" relationship="masterViewController" id="uJl-4F-KhR"/>
-                        <segue destination="z28-Q0-w9l" kind="relationship" relationship="detailViewController" id="RGM-2M-Cmb"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zdk-jc-zz2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -152,12 +151,9 @@
         <namedColor name="MainText">
             <color red="1" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="Orange">
+        <namedColor name="Orange Custom">
             <color red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="9Ve-zz-DTh"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" name="MainText"/>
 </document>

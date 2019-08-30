@@ -10,73 +10,57 @@ import UIKit
 
 // Colored Squares Everywhere Game
 class CSEViewController: UIViewController {
-    
-    enum ChoosedColor {
-        case first, second, third, none
-    }
-    
+
     @IBOutlet weak var firstColorView: UIView!
     @IBOutlet weak var secondColorView: UIView!
     @IBOutlet weak var thirdColorView: UIView!
-    @IBOutlet weak var myPaletteCollectionView: UICollectionView!
+    @IBOutlet var firstColorViewGestureRecognizer: UITapGestureRecognizer!
+    @IBOutlet var secondColorViewGestureRecognizer: UITapGestureRecognizer!
+    @IBOutlet var thirdColorViewGestureRecognizer: UITapGestureRecognizer!
     
     let palette = [
-        UIColor.blue,
-        .red,
-        .green,
+        UIColor.blueCustom,
+        .redCustom,
+        .greenCustom,
+        .yellowCustom,
+        .darkSalmon,
     ]
     
-    var lavel = 1
-    var choosedColor: ChoosedColor = .none
+    var level = 1
     var myPalette = [UIColor]()
-    weak var delegate: CSEViewController? = nil
-    var nextLavelVC: CSEViewController? = nil
+    weak var previousLevelVC: CSEViewController? = nil
+    var nextLevelVC: CSEViewController? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let delegate = delegate {
-            lavel = delegate.lavel + 1
-            myPalette = delegate.myPalette
-            
-            title = "Lavel \(lavel)"
-            
-            let barButton = UIBarButtonItem(
-                title: "Lavel \(delegate.lavel)",
-                style: .plain,
-                target: self,
-                action: #selector(onPreviousLavelTap(_:))
-            )
-            navigationItem.backBarButtonItem = barButton
-        } else {
-            let color = palette[Int.random(in: 0...(palette.count - 1))]!
-            myPalette.append(color)
-        }
+        let shuffledPalette = palette.shuffled().map { $0 }
+        firstColorView.backgroundColor = shuffledPalette[0]
+        secondColorView.backgroundColor = shuffledPalette[1]
+        thirdColorView.backgroundColor = shuffledPalette[2]
         
-        switch choosedColor {
-        case .first:
-            secondColorView.isHidden = true
-            thirdColorView.isHidden = true
-        case .second:
-            firstColorView.isHidden = true
-            thirdColorView.isHidden = true
-        case .third:
-            firstColorView.isHidden = true
-            secondColorView.isHidden = true
-        case .none: break
+        if let previousLevelVC = previousLevelVC {
+            level = previousLevelVC.level + 1
+            myPalette = previousLevelVC.myPalette
+            
+            title = levelTitle(level)
+        } else {
+            let color = shuffledPalette.last!!
+            myPalette.append(color)
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        if let nextLavelVC = nextLavelVC {
-            let barButton = UIBarButtonItem(
-                title: "Lavel \(nextLavelVC.lavel)",
-                style: .plain,
-                target: self,
-                action: #selector(onForwardButtonTap(_:))
-            )
-            navigationItem.rightBarButtonItem = barButton
-//            navigationItem.forwardingTarget(for: #selector(onForwardButtonTap(_:)))
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let nextLevelVC = nextLevelVC {
+            navigationItem.rightBarButtonItem?.title = "\(levelTitle(nextLevelVC.level)) ❯"
+            navigationItem.rightBarButtonItem?.action = #selector(onForwardButtonTap(_:))
+            navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 17)], for: .normal)
+            
+            firstColorViewGestureRecognizer.isEnabled = false
+            secondColorViewGestureRecognizer.isEnabled = false
+            thirdColorViewGestureRecognizer.isEnabled = false
         }
     }
 
@@ -84,60 +68,33 @@ class CSEViewController: UIViewController {
         performSegue(withIdentifier: "ShowHelp", sender: self)
     }
     
-    @IBAction func onFirstColorViewTap(_ sender: Any) {
+    @IBAction func onColorViewTap(_ sender: UITapGestureRecognizer) {
         UIView.animate(withDuration: 0.3, animations: {
-            self.secondColorView.isHidden = true
-            self.thirdColorView.isHidden = true
-            self.loadViewIfNeeded()
+            self.firstColorView.isHidden = sender.view != self.firstColorView
+            self.secondColorView.isHidden = sender.view != self.secondColorView
+            self.thirdColorView.isHidden = sender.view != self.thirdColorView
+            self.view.layoutIfNeeded()
         }, completion: { _ in
-            self.chooseColor(color: self.firstColorView!.backgroundColor!)
+            self.chooseColor(color: sender.view?.backgroundColor)
         })
-    }
-    
-    @IBAction func onSecondViewColorTap(_ sender: Any) {
-        UIView.animate(withDuration: 0.3, animations: {
-            self.firstColorView.isHidden = true
-            self.thirdColorView.isHidden = true
-            self.loadViewIfNeeded()
-        }, completion: { _ in
-            self.chooseColor(color: self.secondColorView!.backgroundColor!)
-        })
-    }
-    
-    @IBAction func onThirdColorViewTap(_ sender: Any) {
-        UIView.animate(withDuration: 0.3, animations: {
-            self.firstColorView.isHidden = true
-            self.secondColorView.isHidden = true
-            self.loadViewIfNeeded()
-        }, completion: { _ in
-            self.chooseColor(color: self.thirdColorView!.backgroundColor!)
-        })
-    }
-    
-    @objc private func onPreviousLavelTap(_ sender: Any?) {
-        navigationController?.popViewController(animated: true)
     }
     
     @objc private func onForwardButtonTap(_ sender: Any?) {
-        if let vc = nextLavelVC {
+        if let vc = nextLevelVC {
             navigationController?.pushViewController(vc, animated: true)
         }
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "ShowGZ", let vc = segue.destination as? UIViewController {
-//            vc.navigationItem.backBarButtonItem = menuButton
-//        }
-//    }
-    
-    private func chooseColor(color: UIColor) {
+    private func chooseColor(color: UIColor?) {
+        guard let color = color else { return }
+        
         myPalette.append(color)
         
         let myPaletteInColorGoups = palette.map({ clr in return myPalette.filter({ $0 == clr }) })
         
         guard myPaletteInColorGoups.first(where: { $0.count >= 3 }) == nil else {
             var stack = navigationController?.viewControllers
-            stack?.removeSubrange(2...)
+            stack?.removeSubrange(1...)
             
             let storyBoard: UIStoryboard = UIStoryboard(name: "CSE Game", bundle: nil)
             let vc = storyBoard.instantiateViewController(withIdentifier: "CSECongratulationsController")
@@ -149,15 +106,19 @@ class CSEViewController: UIViewController {
             return
         }
         
-        if let vc = nextLavelVC {
+        if let vc = nextLevelVC {
             navigationController?.pushViewController(vc, animated: true)
         } else {
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyBoard.instantiateViewController(withIdentifier: "CSEGameStoryboard") as! CSEViewController
-            nextLavelVC = vc
-            vc.delegate = self
+            nextLevelVC = vc
+            vc.previousLevelVC = self
             navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    private func levelTitle(_ lavel: Int) -> String {
+        return "Level \(lavel)"
     }
 }
 

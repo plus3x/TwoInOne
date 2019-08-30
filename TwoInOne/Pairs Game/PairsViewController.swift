@@ -16,14 +16,14 @@ class PairsGameViewController: UIViewController {
     
     let (amountOfColors, amountOfRows) = (10, 8)
     var palette = [
-        UIColor.orange,
-        .green,
-        .red,
-        .blue,
+        UIColor.orangeCustom,
+        .greenCustom,
+        .redCustom,
+        .blueCustom,
         .tan,
         .paleGoldenrod,
         .darkSalmon,
-        .yellow,
+        .yellowCustom,
     ]
     var selectedCellIndexPath: IndexPath?
     
@@ -53,18 +53,6 @@ extension PairsGameViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
-    
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return "\(section + 1)"
-//    }
-//
-//    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-//        let header = view as! UITableViewHeaderFooterView
-//
-//        header.backgroundView?.backgroundColor = nil
-//        header.textLabel?.font = header.textLabel?.font.withSize(20)
-//        header.textLabel?.textColor = .mainText
-//    }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
@@ -92,55 +80,12 @@ extension PairsGameViewController: PairsGameViewControllerDelegate {
             pairs[selectedCellIndexPath.section][selectedCellIndexPath.row] = pairs[section][indexPath.row]
             pairs[section][indexPath.row] = selectedPair
             
-            let firstSection = selectedCellIndexPath.section
-            let firstPair = pairs[selectedCellIndexPath.section][selectedCellIndexPath.row]
-            let firstPairIndexPath = selectedCellIndexPath
+            collapseInNeeded(at: selectedCellIndexPath)
+            collapseInNeeded(at: IndexPath(row: indexPath.row, section: section))
             
-            if firstPairIndexPath.row > 0 {
-                let leftPair = pairs[firstPairIndexPath.section][firstPairIndexPath.row - 1]
-                
-                if firstPair.index == leftPair.index || firstPair.color == leftPair.color {
-                    leftPair.state = .collapsing
-                    firstPair.state = .collapsing
-                }
-            }
+            pairs.removeAll(where: { $0.isEmpty })
             
-            if firstPairIndexPath.row < pairs[firstSection].count - 1 {
-                let rightPair = pairs[firstPairIndexPath.section][firstPairIndexPath.row + 1]
-
-                if firstPair.index == rightPair.index || firstPair.color == rightPair.color {
-                    rightPair.state = .collapsing
-                    firstPair.state = .collapsing
-                }
-            }
-            
-            let secondSection = section
-            let secondPair = pairs[section][indexPath.row]
-            let secondPairIndexPath = IndexPath(row: indexPath.row, section: section)
-            
-            if secondPairIndexPath.row > 0 {
-                let leftPair = pairs[secondPairIndexPath.section][secondPairIndexPath.row - 1]
-                
-                if secondPair.index == leftPair.index || secondPair.color == leftPair.color {
-                    leftPair.state = .collapsing
-                    secondPair.state = .collapsing
-                }
-            }
-            
-            if secondPairIndexPath.row < pairs[secondSection].count - 1 {
-                let rightPair = pairs[secondPairIndexPath.section][secondPairIndexPath.row + 1]
-
-                if secondPair.index == rightPair.index || secondPair.color == rightPair.color {
-                    rightPair.state = .collapsing
-                    secondPair.state = .collapsing
-                }
-            }
-            
-            // Animation state to UICollectionViewCell collapse
-            // tableView.reloadData()
-            
-            pairs[firstSection].removeAll(where: { $0.state == .collapsing })
-            pairs[secondSection].removeAll(where: { $0.state == .collapsing })
+            // Animation UITableViewCell collapsing
             
             tableView.reloadData()
         } else {
@@ -148,6 +93,46 @@ extension PairsGameViewController: PairsGameViewControllerDelegate {
             pairs[section][indexPath.row].state = .selecting
             
             tableView.reloadData()
+        }
+    }
+    
+    private func collapseInNeeded(at indexPath: IndexPath) {
+        let pair = pairs[indexPath.section][indexPath.row]
+        
+        if indexPath.row > 0 {
+            let leftPair = pairs[indexPath.section][indexPath.row - 1]
+            collapseIfNeeded(first: pair, second: leftPair)
+        }
+        
+        if indexPath.row < pairs[indexPath.section].count - 1 {
+            let rightPair = pairs[indexPath.section][indexPath.row + 1]
+            collapseIfNeeded(first: pair, second: rightPair)
+        }
+        
+        // Animation state to UICollectionViewCell collapse
+        // tableView.reloadData()
+        
+        let doCollapseAgain = pairs[indexPath.section].first(where: { $0.state == .collapsing }) != nil
+        
+        pairs[indexPath.section].removeAll(where: { $0.state == .collapsing })
+        
+        if doCollapseAgain {
+            var newIndexPath = indexPath
+            
+            if pairs[indexPath.section].count - 1 < newIndexPath.row {
+                newIndexPath.row = pairs[indexPath.section].count - 1
+            } else if pairs[indexPath.section].count - 1 >= newIndexPath.row  {
+                newIndexPath.row -= 1
+            }
+            
+            collapseInNeeded(at: newIndexPath)
+        }
+    }
+    
+    private func collapseIfNeeded(first: Pair, second: Pair) {
+        if first.index == second.index || first.color == second.color {
+            first.state = .collapsing
+            second.state = .collapsing
         }
     }
 }

@@ -31,7 +31,7 @@
                                                     <segment title="Guessing"/>
                                                     <segment title="Guessing ||"/>
                                                 </segments>
-                                                <color key="tintColor" name="Orange"/>
+                                                <color key="tintColor" name="Orange Custom"/>
                                                 <connections>
                                                     <action selector="onSegmentedControlTap:" destination="dEd-Gt-qWj" eventType="valueChanged" id="VHI-Yu-aSk"/>
                                                 </connections>
@@ -54,6 +54,7 @@
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mg6-JS-zow" userLabel="Number Column Button">
                                                                 <rect key="frame" x="0.0" y="0.0" width="207" height="30"/>
+                                                                <color key="tintColor" name="Orange Custom"/>
                                                                 <state key="normal" title="Number"/>
                                                                 <connections>
                                                                     <action selector="onNumberColumnButtonTap:" destination="dEd-Gt-qWj" eventType="touchUpInside" id="rWM-AV-jhD"/>
@@ -73,7 +74,9 @@
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9V-NC-tFe" userLabel="Attempts Column Button">
                                                                 <rect key="frame" x="0.0" y="0.0" width="207" height="30"/>
-                                                                <state key="normal" title="Attempts"/>
+                                                                <state key="normal" title="Attempts">
+                                                                    <color key="titleColor" name="Orange Custom"/>
+                                                                </state>
                                                                 <connections>
                                                                     <action selector="onAttemptsColumnButtonTap:" destination="dEd-Gt-qWj" eventType="touchUpInside" id="Mmr-EJ-wq6"/>
                                                                 </connections>
@@ -92,7 +95,7 @@
                                                 </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="tintColor" name="Orange"/>
+                                        <color key="tintColor" name="Orange Custom"/>
                                         <constraints>
                                             <constraint firstItem="k5N-qL-UcD" firstAttribute="top" secondItem="rAS-ja-8rH" secondAttribute="top" id="MGW-xZ-0kT"/>
                                             <constraint firstAttribute="bottom" secondItem="k5N-qL-UcD" secondAttribute="bottom" id="ZTO-tt-Ata"/>
@@ -218,7 +221,7 @@
         <namedColor name="MainText">
             <color red="1" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="Orange">
+        <namedColor name="Orange Custom">
             <color red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>

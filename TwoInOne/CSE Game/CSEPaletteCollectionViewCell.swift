@@ -14,6 +14,6 @@ class CSEPaletteCollectionViewCell: UICollectionViewCell {
     func confugure(with color: UIColor) {
         self.color = color
         
-        layer.backgroundColor = color.cgColor
+        backgroundColor = color
     }
 }

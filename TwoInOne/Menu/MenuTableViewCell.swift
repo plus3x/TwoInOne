@@ -15,17 +15,13 @@ class MenuTableViewCell: UITableViewCell {
     @IBOutlet weak var menuItemLabel: UILabel!
     
     var menuItem: MenuItem!
-    
-    override func select(_ sender: Any?) {
-        markAsSelected()
-    }
  
     func configure(with menuItem: MenuItem) {
         self.menuItem = menuItem
         
         menuItemLabel.text = menuItem.name
         
-        if isSelected {
+        if menuItem.selected {
             markAsSelected()
         } else {
             markAsDeselected()
@@ -33,7 +29,7 @@ class MenuTableViewCell: UITableViewCell {
     }
     
     private func markAsSelected() {
-        menuItemLabel.textColor = .orange
+        menuItemLabel.textColor = .orangeCustom
     }
     
     private func markAsDeselected() {

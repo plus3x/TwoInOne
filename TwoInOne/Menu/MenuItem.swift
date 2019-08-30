@@ -11,4 +11,5 @@ import UIKit
 struct MenuItem {
     let name: String
     let segue: String
+    var selected = false
 }

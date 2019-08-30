@@ -32,7 +32,7 @@ class PairsTableViewCell: UITableViewCell {
 
 }
 
-extension PairsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension PairsTableViewCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return pairs.count
@@ -48,6 +48,6 @@ extension PairsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate!.select(in: section, at: indexPath)
+        delegate?.select(in: section, at: indexPath)
     }
 }
