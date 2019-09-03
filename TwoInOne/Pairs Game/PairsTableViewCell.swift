@@ -21,7 +21,7 @@ class PairsTableViewCell: UITableViewCell {
     var section: Int!
     weak var delegate: PairsGameViewControllerDelegate? = nil
     
-    var pairs: [Pair] = []
+    var pairs = [Pair]()
     
     func configure(in section: Int, with pairs: [Pair]) {
         self.section = section
@@ -29,7 +29,16 @@ class PairsTableViewCell: UITableViewCell {
         
         collectionView.reloadData()
     }
-
+    
+    func deletePairs(at indexPaths: [IndexPath], complition: @escaping () -> Void) {
+        collectionView.performBatchUpdates({
+            collectionView.deleteItems(at: indexPaths)
+        }) { _ in
+            self.collectionView.reloadItems(at: self.collectionView.indexPathsForVisibleItems)
+            
+            complition()
+        }
+    }
 }
 
 extension PairsTableViewCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {

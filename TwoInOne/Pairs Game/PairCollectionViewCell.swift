@@ -34,7 +34,7 @@ class PairCollectionViewCell: UICollectionViewCell {
             borderWidthAnimation.duration = 0.3
             layer.add(borderWidthAnimation, forKey: "Width")
             layer.borderWidth = 3
-            pair.state = .selected
+            self.pair?.state = .selected
         case .selected:
             layer.borderWidth = 3
         case .deselecting:
@@ -45,7 +45,7 @@ class PairCollectionViewCell: UICollectionViewCell {
             borderWidthAnimation.duration = 0.3
             layer.add(borderWidthAnimation, forKey: "Width")
             layer.borderWidth = 0
-            pair.state = .normal
+            self.pair?.state = .normal
         case .collapsing: break
         }
     }

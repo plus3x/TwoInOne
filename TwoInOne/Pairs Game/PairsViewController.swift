@@ -51,7 +51,7 @@ extension PairsGameViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return pairs[section].count > 0 ? 1 : 0
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -72,36 +72,68 @@ extension PairsGameViewController: UITableViewDelegate, UITableViewDataSource {
 extension PairsGameViewController: PairsGameViewControllerDelegate {
     func select(in section: Int, at indexPath: IndexPath) {
         if let selectedCellIndexPath = selectedCellIndexPath {
-            self.selectedCellIndexPath = nil
             pairs[selectedCellIndexPath.section][selectedCellIndexPath.row].state = .deselecting
-            pairs[section][indexPath.row].state = .normal
+            self.selectedCellIndexPath = nil
             
             let selectedPair = pairs[selectedCellIndexPath.section][selectedCellIndexPath.row]
             pairs[selectedCellIndexPath.section][selectedCellIndexPath.row] = pairs[section][indexPath.row]
             pairs[section][indexPath.row] = selectedPair
             
-            collapseInNeeded(at: selectedCellIndexPath)
-            collapseInNeeded(at: IndexPath(row: indexPath.row, section: section))
+            reloadPair(at: selectedCellIndexPath)
+            reloadPair(at: IndexPath(row: indexPath.row, section: section))
             
-            pairs.removeAll(where: { $0.isEmpty })
+            collapseIfNeeded(at: selectedCellIndexPath)
+            collapseIfNeeded(at: IndexPath(row: indexPath.row, section: section))
             
-            // Animation UITableViewCell collapsing
-            
-            tableView.reloadData()
+            if pairs.contains(where: { $0.isEmpty}) {
+                let emptyRowIndexPaths = pairs.enumerated()
+                    .compactMap { $1.isEmpty ? IndexPath(row: 0, section: $0) : nil }
+                
+                pairs.removeAll(where: { $0.isEmpty })
+                
+                let indexSet = NSMutableIndexSet()
+                emptyRowIndexPaths.forEach({ indexSet.add($0.section) })
+                tableView.performBatchUpdates({
+                    tableView.deleteSections(indexSet as IndexSet, with: .automatic)
+                }) { _ in
+                    // Update indexes of rows
+                    self.tableView.reloadData()
+                }
+                
+                if pairs.count == 0 {
+                    showCongratulations()
+                }
+            }
         } else {
-            self.selectedCellIndexPath = IndexPath(row: indexPath.row, section: section)
+            selectedCellIndexPath = IndexPath(row: indexPath.row, section: section)
             pairs[section][indexPath.row].state = .selecting
-            
-            tableView.reloadData()
+            reloadPair(at: selectedCellIndexPath!)
         }
     }
     
-    private func collapseInNeeded(at indexPath: IndexPath) {
+    private func showCongratulations() {
+        performSegue(withIdentifier: "ShowCongratulationsVC", sender: self)
+    }
+    
+    private func reloadPair(at indexPath: IndexPath) {
+        let rowIndexPath = IndexPath(row: 0, section: indexPath.section)
+        let itemIndexPath = IndexPath(row: indexPath.row, section: 0)
+        
+        let cell = tableView.cellForRow(at: rowIndexPath) as! PairsTableViewCell
+        cell.pairs = pairs[indexPath.section]
+        cell.collectionView.reloadItems(at: [itemIndexPath])
+    }
+    
+    private func collapseIfNeeded(at indexPath: IndexPath) {
+        guard pairs.count - 1 >= indexPath.section, pairs[indexPath.section].count != 0 else { return }
+        
         let pair = pairs[indexPath.section][indexPath.row]
+        var leftPairRemoved = false
         
         if indexPath.row > 0 {
             let leftPair = pairs[indexPath.section][indexPath.row - 1]
             collapseIfNeeded(first: pair, second: leftPair)
+            if leftPair.state == .collapsing { leftPairRemoved = true }
         }
         
         if indexPath.row < pairs[indexPath.section].count - 1 {
@@ -109,23 +141,23 @@ extension PairsGameViewController: PairsGameViewControllerDelegate {
             collapseIfNeeded(first: pair, second: rightPair)
         }
         
-        // Animation state to UICollectionViewCell collapse
-        // tableView.reloadData()
-        
-        let doCollapseAgain = pairs[indexPath.section].first(where: { $0.state == .collapsing }) != nil
-        
-        pairs[indexPath.section].removeAll(where: { $0.state == .collapsing })
-        
-        if doCollapseAgain {
-            var newIndexPath = indexPath
+        if pairs[indexPath.section].contains(where: { $0.state == .collapsing }) {
+            let collapsingCellIndexPaths = pairs[indexPath.section].enumerated()
+                .compactMap { $1.state == .collapsing ? IndexPath(row: $0, section: 0) : nil }
             
-            if pairs[indexPath.section].count - 1 < newIndexPath.row {
-                newIndexPath.row = pairs[indexPath.section].count - 1
-            } else if pairs[indexPath.section].count - 1 >= newIndexPath.row  {
+            pairs[indexPath.section].removeAll(where: { $0.state == .collapsing })
+            
+            let cell = tableView.cellForRow(at: IndexPath(row: 0, section: indexPath.section)) as! PairsTableViewCell
+            cell.pairs = pairs[indexPath.section]
+            cell.deletePairs(at: collapsingCellIndexPaths) {
+                var newIndexPath = indexPath
                 newIndexPath.row -= 1
+
+                if leftPairRemoved { newIndexPath.row -= 1}
+                if newIndexPath.row < 0 { newIndexPath.row = 0 }
+
+                self.collapseIfNeeded(at: newIndexPath)
             }
-            
-            collapseInNeeded(at: newIndexPath)
         }
     }
     
